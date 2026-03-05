@@ -1,0 +1,71 @@
+{
+  "projectType": "frontend",
+  "projectName": "Luisa Fernanda Zuleta - Portfolio",
+  "projectDescription": "Professional portfolio landing page showcasing developer profile, projects, skills, and social media presence",
+  "theme": "palm",
+  "primaryColor": "#5eabf3",
+  "lightColor": "#c4f1ef",
+  "darkColor": "#243749",
+  "navigation": {
+    "groups": [
+      {
+        "group": "Overview",
+        "pages": [
+          "introduction",
+          "quick-start"
+        ]
+      },
+      {
+        "group": "Portfolio Sections",
+        "pages": [
+          "sections/professional-profile",
+          "sections/hobbies",
+          "sections/projects",
+          "sections/social-media"
+        ]
+      },
+      {
+        "group": "Technical Implementation",
+        "pages": [
+          "technical/html-structure",
+          "technical/css-styling",
+          "technical/responsive-design"
+        ]
+      },
+      {
+        "group": "Features",
+        "pages": [
+          "features/gradient-backgrounds",
+          "features/flexbox-grid-layouts",
+          "features/social-integration",
+          "features/whatsapp-contact"
+        ]
+      },
+      {
+        "group": "Resources",
+        "pages": [
+          "resources/color-scheme",
+          "resources/typography",
+          "resources/images-assets"
+        ]
+      }
+    ]
+  },
+  "keyFeatures": [
+    "Professional profile section with bio and expertise",
+    "Project portfolio with links to Honda Supermotos and Cortinas y Persianas Horizonte",
+    "Social media integration (Facebook, Instagram, LinkedIn)",
+    "WhatsApp contact integration",
+    "Responsive design with Flexbox and Grid layouts",
+    "Gradient backgrounds and modern CSS styling",
+    "Mobile-responsive navigation"
+  ],
+  "publicApiSurface": [
+    "index.html - Main portfolio page",
+    "Actividad_Css.html - Enhanced portfolio with full styling",
+    "ActividadCSS.html - CSS learning demonstration page",
+    "Navigation sections: #perfil-profesional, #hobbies, #proyectos, #redes-sociales",
+    "Social media links: Facebook, Instagram, LinkedIn, WhatsApp",
+    "Project links: Jira board, Honda Supermotos, Cortinas y Persianas Horizonte"
+  ]
+}

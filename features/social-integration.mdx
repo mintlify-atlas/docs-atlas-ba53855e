@@ -1,0 +1,343 @@
+---
+title: 'Social Media Integration'
+description: 'Complete guide to Facebook, Instagram, and LinkedIn integration in the portfolio'
+icon: 'share-nodes'
+---
+
+## Overview
+
+The portfolio includes direct links to **Facebook**, **Instagram**, and **LinkedIn** profiles, styled as interactive icons with hover effects. This integration provides visitors with easy access to Luisa Fernanda's professional and social presence.
+
+## Social Media Links
+
+### Facebook
+
+<Card title="Facebook Profile" icon="facebook">
+**Profile URL**: https://www.facebook.com/profile.php?id=100009198955739&locale=es_LA
+
+**Implementation**: Actividad_Css.html:216-218
+</Card>
+
+```html Actividad_Css.html:216-218
+<a href="https://www.facebook.com/profile.php?id=100009198955739&locale=es_LA" target="_blank">
+    <img src="img/facebook.png.png" alt="Facebook" width="30">
+</a>
+```
+
+### Instagram
+
+<Card title="Instagram Profile" icon="instagram">
+**Profile URL**: https://www.instagram.com/fer.colombia/?next=%2F
+
+**Username**: @fer.colombia
+
+**Implementation**: Actividad_Css.html:219-221
+</Card>
+
+```html Actividad_Css.html:219-221
+<a href="https://www.instagram.com/fer.colombia/?next=%2F" target="_blank">
+    <img src="img/instagram.png.png" alt="Instagram" width="30">
+</a>
+```
+
+### LinkedIn
+
+<Card title="LinkedIn Profile" icon="linkedin">
+**Profile URL**: https://www.linkedin.com/in/luisa-fernanda-zuleta-hurtado-4148b22b5/
+
+**Full Name**: Luisa Fernanda Zuleta Hurtado
+
+**Implementation**: Actividad_Css.html:222-224
+</Card>
+
+```html Actividad_Css.html:222-224
+<a href="https://www.linkedin.com/in/luisa-fernanda-zuleta-hurtado-4148b22b5/" target="_blank">
+    <img src="img/linkedin.png.png" alt="Linkedin" width="30">
+</a>
+```
+
+## Complete Implementation
+
+### HTML Structure
+
+The social media section is organized as a dedicated section with flexbox layout:
+
+```html Actividad_Css.html:213-227
+<section id="box-model">
+    <h2>Redes Sociales</h2>
+    <div class="box">
+        <h2>Sígueme</h2>
+        <a href="https://www.facebook.com/profile.php?id=100009198955739&locale=es_LA" target="_blank">
+            <img src="img/facebook.png.png" alt="Facebook" width="30">
+        </a>
+        <a href="https://www.instagram.com/fer.colombia/?next=%2F" target="_blank">
+            <img src="img/instagram.png.png" alt="Instagram" width="30">
+        </a>
+        <a href="https://www.linkedin.com/in/luisa-fernanda-zuleta-hurtado-4148b22b5/" target="_blank">
+            <img src="img/linkedin.png.png" alt="Linkedin" width="30">
+        </a>
+    </div>
+</section>
+```
+
+<Note>
+**Key Features**:
+- All links use `target="_blank"` to open in new tabs
+- Semantic HTML with proper `alt` attributes for accessibility
+- Consistent icon size (30px width)
+- Grouped within a `.box` container for unified styling
+</Note>
+
+### CSS Styling
+
+#### Container Box
+
+The social icons are wrapped in a flexbox container with gradient background:
+
+```css Actividad_Css.html:74-86
+.box {
+    width: 300px;
+    padding: 20px;
+    margin: 30px auto;
+    border: 4px solid #fbfdfb;
+    border-radius: 10px;
+    background-color: #c5eaf8;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+    display: flex;  /* Activa Flexbox */
+    gap: 15px;  /* Espacio entre íconos */
+    justify-content: center; /* Alinea los íconos en el centro */
+    align-items: center; /* Centra los íconos verticalmente */
+}
+```
+
+<Tip>
+**Design Elements**:
+- `display: flex` with `gap: 15px` creates consistent spacing
+- `justify-content: center` horizontally centers all icons
+- `box-shadow` adds depth and elevation
+- `border-radius: 10px` softens the corners
+</Tip>
+
+#### Link Styling
+
+```css Actividad_Css.html:88-98
+.box a {
+    font-size: 30px;
+    color: #333; /* Color de los íconos */
+    text-decoration: none;
+    transition: color 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.box a:hover {
+    color: #007bff; /* Cambia de color al pasar el mouse */
+    transform: scale(1.2); /* Hace un efecto de agrandamiento */
+}
+```
+
+<Card title="Interactive Hover Effect" icon="hand-pointer">
+When users hover over icons:
+- Color changes from `#333` (dark gray) to `#007bff` (blue)
+- Icon scales up by 20% using `transform: scale(1.2)`
+- Smooth 0.3s transition for both properties
+</Card>
+
+#### Image Hover Effect
+
+```css Actividad_Css.html:101-109
+.box img {
+    width: auto; 
+    height: 40px; 
+    transition: transform 0.3s ease-in-out;
+}
+
+.box img:hover {
+    transform: scale(1.2); 
+}
+```
+
+## Navigation Integration
+
+The social section is linked from the main navigation:
+
+```html Actividad_Css.html:150-157
+<nav>
+    <ul>
+        <li><a href="#perfil-profesional">Perfil Profesional</a></li>
+        <li><a href="#hobbies">Hobbies</a></li>
+        <li><a href="#proyectos">Proyectos</a></li>
+        <li><a href="#redes-sociales">Redes Sociales</a></li>
+    </ul>
+</nav>
+```
+
+<Note>
+The anchor link `#redes-sociales` (Social Networks) allows users to jump directly to the social media section from anywhere on the page.
+</Note>
+
+## Professional Profiles
+
+### LinkedIn Profile Details
+
+The LinkedIn integration connects to a professional profile showcasing:
+- Full name: Luisa Fernanda Zuleta Hurtado
+- Professional experience in software development
+- Graphic design portfolio
+- Community management work
+
+### Instagram Content
+
+The Instagram link (`@fer.colombia`) provides access to:
+- Personal and professional content
+- Portfolio highlights
+- Behind-the-scenes work
+
+## Asset Structure
+
+Social media icons are stored in the `img/` directory:
+
+```
+img/
+├── facebook.png.png
+├── instagram.png.png
+└── linkedin.png.png
+```
+
+<Tip>
+**Icon Requirements**:
+- PNG format with transparency
+- Consistent size (30px width in HTML)
+- Platform-recognizable branding
+</Tip>
+
+## Accessibility Features
+
+<CardGroup cols={2}>
+<Card title="Alt Text" icon="universal-access">
+Each icon includes descriptive `alt` attributes:
+- "Facebook"
+- "Instagram" 
+- "Linkedin"
+
+This ensures screen readers can identify each platform.
+</Card>
+
+<Card title="Target Blank" icon="arrow-up-right-from-square">
+All links use `target="_blank"` to:
+- Keep the portfolio open
+- Open social profiles in new tabs
+- Maintain user context
+</Card>
+</CardGroup>
+
+## Best Practices
+
+### Link Management
+
+<Note>
+**Security Consideration**: When using `target="_blank"`, consider adding `rel="noopener noreferrer"` to prevent security vulnerabilities:
+
+```html
+<a href="..." target="_blank" rel="noopener noreferrer">
+```
+
+This prevents the new page from accessing the `window.opener` object.
+</Note>
+
+### Visual Consistency
+
+<CardGroup cols={3}>
+<Card title="Icon Size" icon="ruler">
+All icons maintain consistent 30px width for visual harmony
+</Card>
+
+<Card title="Spacing" icon="expand">
+15px gap between icons using flexbox `gap` property
+</Card>
+
+<Card title="Alignment" icon="align-center">
+Centered horizontally and vertically with flexbox
+</Card>
+</CardGroup>
+
+## Related Projects
+
+The portfolio also showcases professional work with other brands:
+
+```html Actividad_Css.html:201-206
+<li><a href="https://hondasupermotos.com/">Honda Supermotos</a></li>
+<img src="img/honda.jpg" alt="GSM" width="80">
+<br><p>Community Manager y Diseñadora en Honda Supermotos</p>
+
+<li><a href="https://www.persianashorizonte.com/?srsltid=...">Cortinas y Persianas Horizonte</a></li>
+<img src="img/logo  hor.png" alt="Horizonte" width="120">
+<br><p>Community Manager y Diseñadora en Cortinas y Persianas Horizonte</p>
+```
+
+<Card title="Community Management Experience" icon="users">
+Luisa Fernanda's experience as a Community Manager for Honda Supermotos and Cortinas y Persianas Horizonte demonstrates professional social media management skills.
+</Card>
+
+## Mobile Responsiveness
+
+The social box maintains its centered layout on all screen sizes:
+
+```css
+.box {
+    width: 300px;
+    margin: 30px auto; /* Centers the box */
+}
+```
+
+On screens below 600px, the flexbox container adapts:
+
+```css Actividad_Css.html:139-146
+@media (max-width: 600px) {
+    .flex-container {
+        flex-direction: column;
+    }
+}
+```
+
+<Note>
+While the general flex containers switch to column layout on mobile, the `.box` social icons maintain their horizontal row layout for better usability.
+</Note>
+
+## Implementation Checklist
+
+<Steps>
+<Step title="Add HTML Structure">
+Create a section with flexbox container and link elements for each platform
+</Step>
+
+<Step title="Style Container">
+Apply flexbox properties, background, border, and shadow to `.box`
+</Step>
+
+<Step title="Add Hover Effects">
+Implement color change and scale transform on link and image hover states
+</Step>
+
+<Step title="Test Links">
+Verify all social media URLs open correctly in new tabs
+</Step>
+
+<Step title="Check Accessibility">
+Ensure alt text is present and descriptive for all icons
+</Step>
+</Steps>
+
+## Next Steps
+
+<CardGroup cols={3}>
+<Card title="WhatsApp Contact" icon="message" href="/features/whatsapp-contact">
+Add direct messaging capability
+</Card>
+
+<Card title="Flexbox Layouts" icon="grid" href="/features/flexbox-grid-layouts">
+Learn the layout techniques used
+</Card>
+
+<Card title="Gradient Backgrounds" icon="palette" href="/features/gradient-backgrounds">
+Explore the gradient styling
+</Card>
+</CardGroup>

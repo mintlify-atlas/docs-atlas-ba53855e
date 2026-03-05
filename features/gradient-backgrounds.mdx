@@ -1,0 +1,194 @@
+---
+title: 'Gradient Backgrounds'
+description: 'Learn how linear gradient backgrounds are implemented throughout the portfolio site'
+icon: 'palette'
+---
+
+## Overview
+
+The portfolio uses multiple linear gradient backgrounds to create a modern, vibrant aesthetic. Gradients are applied to various elements including the body, headers, sections, and interactive components.
+
+## Body Gradients
+
+### Main Portfolio Page
+
+The primary portfolio page (`Actividad_Css.html`) features a cyan-to-gray gradient:
+
+<CodeGroup>
+```css Actividad_Css.html:14
+body {
+    font-family: Georgia, 'Times New Roman', Times, serif, sans-serif;
+    margin: 40px;
+    padding: 40px;
+    background: linear-gradient(to left, rgba(5, 240, 248, 0.849), rgba(176, 208, 212, 0.7));
+    color: #333;
+    text-align: center;
+}
+```
+
+```css index.html:14
+body {
+    margin: 100px;
+    padding: 100px;
+    border: 100px;
+    background-color: rgba(185, 234, 253, 0.7);
+    background-image: linear-gradient(to right, rgba(44, 54, 58, 0.7), rgba(185, 116, 253, 0.7));
+}
+```
+</CodeGroup>
+
+<Note>
+The main portfolio uses a **left-directed gradient** transitioning from bright cyan `rgba(5, 240, 248, 0.849)` to muted gray-blue `rgba(176, 208, 212, 0.7)`, while the basic version uses a **right-directed gradient** from dark gray to purple.
+</Note>
+
+## Header Gradients
+
+### Blue Gradient Header
+
+The header section features a horizontal gradient from blue to light cyan:
+
+```css Actividad_Css.html:23
+header {
+    background: linear-gradient(90deg, #5eabf3, #c4f1ef);
+    padding: 20px;
+    color: rgb(36, 55, 73);
+    font-size: 1.5em;
+}
+```
+
+<Tip>
+The `90deg` value creates a perfect left-to-right gradient, transitioning from vibrant blue `#5eabf3` to soft cyan `#c4f1ef`.
+</Tip>
+
+### Green Gradient Header (CSS Learning Demo)
+
+The CSS demonstration page uses a green theme:
+
+```css ActividadCSS.html:24
+header {
+    background: linear-gradient(90deg, #4CAF50, #2E8B57);
+    padding: 20px;
+    color: white;
+    font-size: 1.5em;
+}
+```
+
+## Section Gradients
+
+### Profile Section
+
+The professional profile section uses a cyan-to-gray gradient:
+
+```css Actividad_Css.html:71
+.section {
+    width: 100%;
+    padding: 20px;
+    background: linear-gradient(to right, #02b5d4, #dad8d7);
+    color: rgb(24, 22, 22);
+}
+```
+
+### Column Gradients
+
+Project columns feature a subtle white-to-cyan gradient:
+
+```css Actividad_Css.html:46
+.columna {
+    background: linear-gradient(to right, #f8f6f6, #1cc7f1);
+    padding: 10px;
+    border-radius: 8px;
+}
+```
+
+## Interactive Component Gradients
+
+### WhatsApp Contact Box
+
+The WhatsApp contact feature uses a dramatic black-to-cyan gradient:
+
+```css Actividad_Css.html:117
+.whatsapp-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0px;
+    background: linear-gradient(to right, #0a0a0a, #52dff5);
+    padding: 10px 450px;
+    border-radius: 10px;
+    transition: transform 0.3s ease-in-out;
+}
+```
+
+<Card title="Design Pattern" icon="lightbulb">
+The WhatsApp box uses a high-contrast gradient from nearly black `#0a0a0a` to bright cyan `#52dff5`, creating visual emphasis for the call-to-action.
+</Card>
+
+## CSS Learning Demo Gradient
+
+The demonstration page includes an orange-to-peach gradient example:
+
+```css ActividadCSS.html:47
+.gradient-box {
+    width: 100%;
+    padding: 20px;
+    background: linear-gradient(to right, #ff7e5f, #feb47b);
+    color: white;
+}
+```
+
+## Gradient Color Palette
+
+<CardGroup cols={2}>
+<Card title="Primary Blues" icon="droplet">
+- `#5eabf3` - Vibrant Blue
+- `#c4f1ef` - Light Cyan
+- `#02b5d4` - Deep Cyan
+- `rgba(5, 240, 248, 0.849)` - Bright Cyan (transparent)
+</Card>
+
+<Card title="Accent Colors" icon="palette">
+- `#52dff5` - Bright Cyan
+- `#1cc7f1` - Sky Blue
+- `#0a0a0a` - Near Black
+- `rgba(185, 116, 253, 0.7)` - Purple (transparent)
+</Card>
+
+<Card title="Neutral Tones" icon="circle">
+- `#dad8d7` - Light Gray
+- `#f8f6f6` - Off White
+- `rgba(176, 208, 212, 0.7)` - Gray-Blue (transparent)
+</Card>
+
+<Card title="Learning Demo" icon="graduation-cap">
+- `#4CAF50` - Green
+- `#2E8B57` - Sea Green
+- `#ff7e5f` - Coral Orange
+- `#feb47b` - Peach
+</Card>
+</CardGroup>
+
+## Implementation Tips
+
+<Tip>
+**Direction Matters**: Use `to right`, `to left`, or angle values like `90deg` to control gradient flow and create visual hierarchy.
+</Tip>
+
+<Note>
+**Transparency**: RGBA values allow gradients to blend with underlying elements, creating depth and layered effects.
+</Note>
+
+## Browser Support
+
+Linear gradients are widely supported across all modern browsers. No vendor prefixes are required for current implementations.
+
+## Next Steps
+
+<CardGroup cols={2}>
+<Card title="Flexbox Layouts" icon="grid" href="/features/flexbox-grid-layouts">
+Learn how flexbox and CSS grid work together with these gradients
+</Card>
+
+<Card title="Social Integration" icon="share-nodes" href="/features/social-integration">
+See how gradients enhance social media components
+</Card>
+</CardGroup>

@@ -1,0 +1,382 @@
+---
+title: 'Images & Assets'
+description: 'Complete inventory of images and visual assets used in the portfolio'
+icon: 'image'
+---
+
+## Overview
+
+The portfolio includes a curated collection of images stored in the `img/` directory, featuring profile photos, social media icons, and brand logos for professional projects. All images are strategically placed to enhance the portfolio's visual appeal and functionality.
+
+## Asset Inventory
+
+### Profile & Personal
+
+<Card title="Profile Photo" icon="user-circle">
+**Filename:** `Fer.jpeg`  
+**Path:** `img/Fer.jpeg`  
+**Usage:** Main profile picture  
+**Location:** `Actividad_Css.html:164`  
+**CSS Class:** `.profile-img`  
+**Dimensions:** 250px width (height: auto)
+
+```html
+<img src="img/Fer.jpeg" alt="Luisa Fernanda Zuleta Hurtado" class="profile-img">
+```
+
+**Styling:**
+```css
+.profile-img {
+    width: 250px;
+    height: auto;
+}
+```
+</Card>
+
+### Social Media Icons
+
+<CardGroup cols={2}>
+  <Card title="Facebook" icon="facebook">
+    **Filename:** `facebook.png.png`  
+    **Path:** `img/facebook.png.png`  
+    **Dimensions:** 30px width  
+    **Link:** Facebook profile  
+    **Location:** `Actividad_Css.html:217`
+  </Card>
+  
+  <Card title="Instagram" icon="instagram">
+    **Filename:** `instagram.png.png`  
+    **Path:** `img/instagram.png.png`  
+    **Dimensions:** 30px width  
+    **Link:** Instagram profile  
+    **Location:** `Actividad_Css.html:220`
+  </Card>
+  
+  <Card title="LinkedIn" icon="linkedin">
+    **Filename:** `linkedin.png.png`  
+    **Path:** `img/linkedin.png.png`  
+    **Dimensions:** 30px width  
+    **Link:** LinkedIn profile  
+    **Location:** `Actividad_Css.html:223`
+  </Card>
+  
+  <Card title="WhatsApp" icon="whatsapp">
+    **Filename:** `whatsapp.png`  
+    **Path:** `img/whatsapp.png`  
+    **Dimensions:** 70px width  
+    **Link:** WhatsApp contact  
+    **Location:** `Actividad_Css.html:231`
+  </Card>
+</CardGroup>
+
+### Professional Project Logos
+
+<CardGroup cols={2}>
+  <Card title="Honda Supermotos" icon="building">
+    **Filename:** `honda.jpg`  
+    **Path:** `img/honda.jpg`  
+    **Dimensions:** 80px width  
+    **Context:** Community Manager & Designer work  
+    **Location:** `Actividad_Css.html:202`
+    
+    ```html
+    <img src="img/honda.jpg" alt="GSM" width="80">
+    ```
+  </Card>
+  
+  <Card title="Cortinas y Persianas Horizonte" icon="store">
+    **Filename:** `logo  hor.png`  
+    **Path:** `img/logo  hor.png`  
+    **Dimensions:** 120px width  
+    **Context:** Community Manager & Designer work  
+    **Location:** `Actividad_Css.html:205`
+    
+    ```html
+    <img src="img/logo  hor.png" alt="Horizonte" width="120">
+    ```
+  </Card>
+</CardGroup>
+
+<Note>
+Note the space in the filename "logo  hor.png" (two spaces between "logo" and "hor"). This should be preserved when referencing this asset.
+</Note>
+
+## Image Styling
+
+### Global Image Styles
+
+```css
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    border-radius: 5px;
+}
+```
+
+**Properties:**
+- **max-width:** 100% - Responsive, never exceeds container width
+- **height:** auto - Maintains aspect ratio
+- **display:** block - Prevents inline spacing issues
+- **margin:** 0 auto - Centers images horizontally
+- **border-radius:** 5px - Subtle rounded corners
+
+### Social Media Icon Styles
+
+#### Box Container Icons
+
+```css
+.box img {
+    width: auto; 
+    height: 40px; 
+    transition: transform 0.3s ease-in-out;
+}
+
+.box img:hover {
+    transform: scale(1.2); 
+}
+```
+
+**Features:**
+- Height fixed at 40px, width scales automatically
+- Smooth hover animation (0.3s)
+- 20% scale increase on hover for interactivity
+
+#### WhatsApp Icon Special Styling
+
+```css
+.whatsapp-box img {
+    width: 70px;
+    height: auto;
+}
+```
+
+**Features:**
+- Larger size (70px) to emphasize call-to-action
+- No hover effect (applied to parent container instead)
+
+## Image Usage by Section
+
+### Profile Section
+
+<Card>
+**Image:** Fer.jpeg  
+**Purpose:** Personal branding  
+**Size:** 250px × auto  
+**Placement:** Top of main content area  
+**Alt text:** "Luisa Fernanda Zuleta Hurtado"
+
+```html
+<img src="img/Fer.jpeg" alt="Luisa Fernanda Zuleta Hurtado" class="profile-img">
+```
+</Card>
+
+### Projects Section
+
+<CardGroup cols={2}>
+  <Card title="Honda Project">
+    **Image:** honda.jpg  
+    **Size:** 80px  
+    **Alt:** "GSM"  
+    **Link:** https://hondasupermotos.com/
+  </Card>
+  
+  <Card title="Horizonte Project">
+    **Image:** logo  hor.png  
+    **Size:** 120px  
+    **Alt:** "Horizonte"  
+    **Link:** https://www.persianashorizonte.com/
+  </Card>
+</CardGroup>
+
+### Social Media Section
+
+**Container:** `.box`  
+**Layout:** Flexbox with 15px gap  
+**Images:** Facebook, Instagram, LinkedIn icons  
+**Size:** 30px width (inline attribute), 40px height (CSS)
+
+```html
+<div class="box">
+    <h2>Sígueme</h2>
+    <a href="..." target="_blank">
+        <img src="img/facebook.png.png" alt="Facebook" width="30">
+    </a>
+    <a href="..." target="_blank">
+        <img src="img/instagram.png.png" alt="Instagram" width="30">
+    </a>
+    <a href="..." target="_blank">
+        <img src="img/linkedin.png.png" alt="Linkedin" width="30">
+    </a>
+</div>
+```
+
+### Contact Section
+
+**Container:** `.whatsapp-box`  
+**Image:** whatsapp.png  
+**Size:** 70px width  
+**Styling:** Flexbox layout with text link
+
+```html
+<div class="whatsapp-box">
+    <img src="img/whatsapp.png" alt="WhatsApp">
+    <a href="https://w.app/virtualmind" target="_blank">Contáctame</a>
+</div>
+```
+
+## Interactive Effects
+
+### Hover Animations
+
+<CardGroup cols={2}>
+  <Card title="Social Icons" icon="hand-pointer">
+    **Effect:** Scale transform  
+    **Scale:** 1.2 (20% increase)  
+    **Duration:** 0.3s  
+    **Easing:** ease-in-out
+    
+    ```css
+    .box img:hover {
+        transform: scale(1.2);
+    }
+    ```
+  </Card>
+  
+  <Card title="WhatsApp Box" icon="comments">
+    **Effect:** Container scale  
+    **Scale:** 1.1 (10% increase)  
+    **Duration:** 0.3s  
+    **Easing:** ease-in-out
+    
+    ```css
+    .whatsapp-box:hover {
+        transform: scale(1.1);
+    }
+    ```
+  </Card>
+</CardGroup>
+
+### Link Color Changes
+
+```css
+.box a:hover {
+    color: #007bff;
+    transform: scale(1.2);
+}
+```
+
+Social media links change to Bootstrap blue on hover, enhancing the visual feedback.
+
+## Asset Organization
+
+```
+workspace/source/
+└── img/
+    ├── Fer.jpeg              # Profile photo
+    ├── facebook.png.png      # Social icon
+    ├── instagram.png.png     # Social icon
+    ├── linkedin.png.png      # Social icon
+    ├── whatsapp.png          # Contact icon
+    ├── honda.jpg             # Project logo
+    └── logo  hor.png         # Project logo
+```
+
+## Accessibility
+
+### Alt Text Implementation
+
+All images include descriptive alt text for accessibility:
+
+| Image | Alt Text | Purpose |
+|-------|----------|---------|
+| Fer.jpeg | "Luisa Fernanda Zuleta Hurtado" | Identifies person in profile photo |
+| facebook.png.png | "Facebook" | Identifies social platform |
+| instagram.png.png | "Instagram" | Identifies social platform |
+| linkedin.png.png | "Linkedin" | Identifies social platform |
+| whatsapp.png | "WhatsApp" | Identifies messaging platform |
+| honda.jpg | "GSM" | Honda Supermotos branding |
+| logo  hor.png | "Horizonte" | Company name |
+
+## Responsive Behavior
+
+<Note>
+All images use `max-width: 100%` and `height: auto` to ensure responsive behavior across devices.
+</Note>
+
+### Mobile Considerations
+
+```css
+@media (max-width: 600px) {
+    .flex-container {
+        flex-direction: column;
+    }
+}
+```
+
+While specific mobile image sizing isn't defined, the global responsive image styles ensure images scale appropriately on smaller screens.
+
+## Implementation Best Practices
+
+<CardGroup cols={2}>
+  <Card title="Consistent Sizing" icon="ruler">
+    Social media icons maintain consistent 30-40px sizing for visual harmony
+  </Card>
+  
+  <Card title="Aspect Ratios" icon="crop">
+    Always use `height: auto` to prevent image distortion
+  </Card>
+  
+  <Card title="Performance" icon="gauge">
+    Images are appropriately sized - profile at 250px, icons at 30-70px
+  </Card>
+  
+  <Card title="Hover Feedback" icon="cursor">
+    Interactive images provide visual feedback through scale transforms
+  </Card>
+</CardGroup>
+
+## File Naming Conventions
+
+<Warning>
+Some image files use unconventional naming:
+- Double extensions: `facebook.png.png`, `instagram.png.png`, `linkedin.png.png`
+- Extra spaces: `logo  hor.png` (two spaces)
+
+When referencing these assets, use the exact filenames as shown.
+</Warning>
+
+## Usage Examples
+
+### Profile Image
+```html
+<img src="img/Fer.jpeg" 
+     alt="Luisa Fernanda Zuleta Hurtado" 
+     class="profile-img"
+     style="width: 250px; height: auto;">
+```
+
+### Social Media Icon with Link
+```html
+<a href="https://www.linkedin.com/in/luisa-fernanda-zuleta-hurtado-4148b22b5/" target="_blank">
+    <img src="img/linkedin.png.png" 
+         alt="Linkedin" 
+         width="30"
+         style="height: 40px; transition: transform 0.3s;">
+</a>
+```
+
+### Project Logo
+```html
+<a href="https://hondasupermotos.com/">Honda Supermotos</a>
+<img src="img/honda.jpg" alt="GSM" width="80">
+```
+
+## References
+
+- Main image implementation: `Actividad_Css.html:31-109`
+- Profile image: `Actividad_Css.html:164`
+- Social media icons: `Actividad_Css.html:214-226`
+- WhatsApp contact: `Actividad_Css.html:230-233`
+- Project logos: `Actividad_Css.html:202-206`

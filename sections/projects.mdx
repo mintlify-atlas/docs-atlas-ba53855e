@@ -1,0 +1,269 @@
+---
+title: 'Projects Section'
+description: 'Documentation for the projects section showcasing professional experience with VirtualMind/UCP, Honda Supermotos, and Cortinas y Persianas Horizonte'
+---
+
+## Overview
+
+The projects section showcases professional experience and accomplishments across three major projects, demonstrating expertise in software development, graphic design, and community management. This section provides concrete evidence of the capabilities mentioned in the professional profile.
+
+<Note>
+The projects section is identified by the anchor `#proyectos` and spans Actividad_Css.html:185-210
+</Note>
+
+## Section Structure
+
+The projects section contains:
+- Section heading "Proyectos Personales y Profesionales"
+- Subsection "Experiencia y Logros" (Experience and Achievements)
+- Three featured projects with links, descriptions, and images
+- Nested grid layout showcasing skill categories
+
+## HTML Implementation
+
+Here's the complete HTML structure from the source code:
+
+```html
+<section id="proyectos">
+    <h2>Proyectos Personales y Profesionales</h2>
+    <div class="columna">
+        <h2>Experiencia y Logros:</h2>
+        <ul>
+            <li><a href="https://fernanda-ucp.atlassian.net/jira/software/projects/SCRUM/boards/1/timeline?atlOrigin=eyJpIjoiMjU2YmNlYWRmNWUzNDY0YWE5YWYyNjhhNzAxZmI2NzgiLCJwIjoiaiJ9">Jira</a></li>
+        <p> Desarrolladora y Diseñadora en VirtualMind - Proyecto de Innovación Educativa con AR (UCP)</p>
+        <div class="contenedor">
+            <div class="columna">
+                <h3>Desarrollo de Software</h3>
+                <p>Desarrollo de aplicaciones web y móviles con tecnologías como HTML, CSS, JavaScript, React, Node.js, Express, MongoDB, entre otras.</p>
+            </div>
+            <div class="columna">
+                <h3>Diseño Gráfico</h3>
+                <p>Diseño de interfaces de usuario, logotipos, ilustraciones y material gráfico para redes sociales y marketing digital.</p>
+            </div>
+        <li><a href="https://hondasupermotos.com/">Honda Supermotos</a></li>
+        <img src="img/honda.jpg" alt="GSM" width="80">
+        <br><p>Community Manager y Diseñadora en Honda Supermotos</p>
+        <li><a href="https://www.persianashorizonte.com/?srsltid=AfmBOorN94Qvl-Hq-13PTMfaszFl-JuecqqQd6EPbIPQedHI3I8zFDxx">Cortinas y Persianas Horizonte</a></li>
+        <img src="img/logo  hor.png" alt="Horizonte" width="120">
+      <br><p>Community Manager y Diseñadora en Cortinas y Persianas Horizonte</p>
+        </ul>  
+    </div>
+</section>
+```
+
+## Featured Projects
+
+<CardGroup cols={1}>
+<Card title="VirtualMind - UCP Educational Innovation Project" icon="brain" href="https://fernanda-ucp.atlassian.net/jira/software/projects/SCRUM/boards/1/timeline">
+**Role:** Desarrolladora y Diseñadora (Developer and Designer)
+
+**Project Type:** Educational Innovation with Augmented Reality (AR)
+
+**Project Management:** Includes link to Jira project management board
+
+**Technologies:**
+- HTML, CSS, JavaScript
+- React
+- Node.js, Express
+- MongoDB
+- AR technologies
+
+This project demonstrates full-stack development capabilities and innovative use of AR in education.
+</Card>
+
+<Card title="Honda Supermotos" icon="motorcycle" href="https://hondasupermotos.com/">
+**Role:** Community Manager y Diseñadora
+
+**Company:** Honda Supermotos
+
+**Website:** [hondasupermotos.com](https://hondasupermotos.com/)
+
+**Responsibilities:**
+- Social media management
+- Graphic design for marketing materials
+- Community engagement
+- Brand presence management
+
+The project includes a company logo image (`img/honda.jpg`) displayed at 80px width.
+</Card>
+
+<Card title="Cortinas y Persianas Horizonte" icon="home" href="https://www.persianashorizonte.com/">
+**Role:** Community Manager y Diseñadora
+
+**Company:** Cortinas y Persianas Horizonte (Curtains and Blinds)
+
+**Website:** [persianashorizonte.com](https://www.persianashorizonte.com/)
+
+**Responsibilities:**
+- Social media strategy and management
+- Graphic design for home decor business
+- Digital marketing content
+- Brand identity management
+
+The project includes a company logo (`img/logo hor.png`) displayed at 120px width.
+</Card>
+</CardGroup>
+
+## Skill Categories Grid
+
+The VirtualMind project includes a nested grid showcasing two key skill areas:
+
+### Development Skills
+
+```html
+<div class="columna">
+    <h3>Desarrollo de Software</h3>
+    <p>Desarrollo de aplicaciones web y móviles con tecnologías como HTML, CSS, JavaScript, React, Node.js, Express, MongoDB, entre otras.</p>
+</div>
+```
+
+**Translation:** "Development of web and mobile applications with technologies such as HTML, CSS, JavaScript, React, Node.js, Express, MongoDB, among others."
+
+### Design Skills
+
+```html
+<div class="columna">
+    <h3>Diseño Gráfico</h3>
+    <p>Diseño de interfaces de usuario, logotipos, ilustraciones y material gráfico para redes sociales y marketing digital.</p>
+</div>
+```
+
+**Translation:** "Design of user interfaces, logos, illustrations and graphic material for social networks and digital marketing."
+
+## Styling
+
+The section uses two main CSS classes:
+
+### Container Grid
+
+```css
+.contenedor {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Divide en dos columnas iguales */
+    gap: 10px; /* Espaciado entre columnas */
+    max-width: 400px;
+    margin: auto;
+}
+```
+
+<Accordion title="Grid Properties Breakdown">
+- **display: grid** - Enables CSS Grid layout
+- **grid-template-columns: 1fr 1fr** - Creates two equal columns
+- **gap: 10px** - 10px spacing between columns
+- **max-width: 400px** - Limits container width
+- **margin: auto** - Centers the container
+</Accordion>
+
+### Column Styling
+
+```css
+.columna {
+    background: linear-gradient(to right, #f8f6f6, #1cc7f1);
+    padding: 10px;
+    border-radius: 8px;
+}
+```
+
+<Note>
+The `.columna` class applies a light gray to cyan gradient background with rounded corners, creating visually distinct content blocks.
+</Note>
+
+## Visual Elements
+
+### Project Images
+
+Each commercial project includes logo imagery:
+
+- **Honda Supermotos**: `img/honda.jpg` at 80px width
+- **Cortinas y Persianas Horizonte**: `img/logo hor.png` at 120px width
+
+Images use inline width attributes for sizing and include descriptive alt text.
+
+## External Links
+
+All three projects include clickable links:
+
+<CardGroup cols={3}>
+<Card title="Jira Board" icon="list-check">
+Project management tool link for VirtualMind/UCP showing SCRUM board timeline
+</Card>
+
+<Card title="Honda Website" icon="link">
+Live website link to Honda Supermotos commercial site
+</Card>
+
+<Card title="Horizonte Website" icon="link">
+Live website link to Cortinas y Persianas Horizonte business site
+</Card>
+</CardGroup>
+
+## Content Strategy
+
+The projects section effectively demonstrates:
+
+1. **Technical Expertise**: VirtualMind project showcases full-stack development with modern technologies
+2. **Design Capabilities**: All projects emphasize graphic design and UI/UX work
+3. **Community Management**: Two projects highlight community manager role
+4. **Industry Diversity**: Projects span education (AR), automotive retail, and home decor
+5. **Proof of Work**: Live website links and project management board provide verification
+
+## Best Practices
+
+<CardGroup cols={2}>
+<Card title="Show, Don't Tell" icon="image">
+The section combines descriptive text with actual links and images, providing tangible evidence of work. Always link to live projects when possible.
+</Card>
+
+<Card title="Diverse Portfolio" icon="layer-group">
+Featuring projects across different industries demonstrates adaptability and broad skill application. This approach appeals to varied potential clients or employers.
+</Card>
+</CardGroup>
+
+## Enhancement Opportunities
+
+<Accordion title="Potential Improvements">
+1. **Add project thumbnails**: Include screenshots or mockups of project work
+2. **Expand descriptions**: Add bullet points for specific achievements or metrics
+3. **Include testimonials**: Add client feedback or recommendations
+4. **Show process**: Include before/after images or development timeline
+5. **Highlight technologies**: Use badges or icons for tech stack visualization
+6. **Add dates**: Include project timeline or completion dates
+7. **Case studies**: Link to detailed case studies for major projects
+</Accordion>
+
+## Integration with Navigation
+
+The section is accessible through the navigation menu at Actividad_Css.html:154:
+
+```html
+<li><a href="#proyectos">Proyectos</a></li>
+```
+
+## Responsive Considerations
+
+The grid layout adapts to smaller screens through media queries:
+
+```css
+@media (max-width: 600px) {
+    .flex-container {
+        flex-direction: column;
+    }
+    .grid-container {
+        display: block;
+    }
+}
+```
+
+<Note>
+While the media query doesn't specifically target `.contenedor`, the design could benefit from stacking columns vertically on mobile devices.
+</Note>
+
+## Related Sections
+
+- **Professional Profile**: Projects validate the expertise claimed in the profile
+- **Social Media**: Links may provide additional project portfolio content
+- **Hobbies**: Personal interests may inspire creative approaches in projects
+
+## File Location
+
+Source: `~/workspace/source/Actividad_Css.html:185-210`

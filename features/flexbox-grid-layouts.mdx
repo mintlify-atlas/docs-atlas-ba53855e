@@ -1,0 +1,371 @@
+---
+title: 'Flexbox & Grid Layouts'
+description: 'Comprehensive guide to flexbox and CSS grid implementations in the portfolio'
+icon: 'grid'
+---
+
+## Overview
+
+The portfolio site uses a combination of **Flexbox** and **CSS Grid** to create responsive, flexible layouts. These modern CSS layout techniques work together to handle everything from navigation to complex multi-column content.
+
+## Flexbox Implementations
+
+### Social Media Icons Box
+
+The social media section uses flexbox to center and space icons horizontally:
+
+```css Actividad_Css.html:82-86
+.box {
+    width: 300px;
+    padding: 20px;
+    margin: 30px auto;
+    border: 4px solid #fbfdfb;
+    border-radius: 10px;
+    background-color: #c5eaf8;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+    display: flex;  /* Activa Flexbox */
+    gap: 15px;  /* Espacio entre íconos */
+    justify-content: center; /* Alinea los íconos en el centro */
+    align-items: center; /* Centra los íconos verticalmente */
+}
+```
+
+<Note>
+**Key Properties**:
+- `display: flex` - Activates flexbox layout
+- `gap: 15px` - Creates consistent spacing between child elements
+- `justify-content: center` - Centers items horizontally
+- `align-items: center` - Centers items vertically
+</Note>
+
+### WhatsApp Contact Component
+
+The WhatsApp contact button uses flexbox for perfect icon-text alignment:
+
+```css Actividad_Css.html:112-121
+.whatsapp-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0px;
+    background: linear-gradient(to right, #0a0a0a, #52dff5);
+    padding: 10px 450px;
+    border-radius: 10px;
+    transition: transform 0.3s ease-in-out;
+}
+```
+
+<Tip>
+Setting `gap: 0px` allows the icon and text to sit flush against each other, creating a unified button appearance.
+</Tip>
+
+### Navigation Menu
+
+Inline navigation items are styled using flexbox principles:
+
+```css Actividad_Css.html:58-60
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+```
+
+<CodeGroup>
+```html Actividad_Css.html:150-157
+<nav>
+    <ul>
+        <li><a href="#perfil-profesional">Perfil Profesional</a></li>
+        <li><a href="#hobbies">Hobbies</a></li>
+        <li><a href="#proyectos">Proyectos</a></li>
+        <li><a href="#redes-sociales">Redes Sociales</a></li>
+    </ul>
+</nav>
+```
+
+```css Navigation Styling
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: rgb(51, 82, 117);
+    text-decoration: none;
+    font-weight: bold;
+}
+```
+</CodeGroup>
+
+### Flexbox Demo (CSS Learning Page)
+
+The CSS demonstration page includes a complete flexbox example:
+
+```css ActividadCSS.html:51-66
+.flex-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 20px;
+}
+
+.flex-item {
+    width: 100px;
+    height: 100px;
+    background-color: #4CAF50;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5em;
+}
+```
+
+```html ActividadCSS.html:114-118
+<div class="flex-container">
+    <div class="flex-item">1</div>
+    <div class="flex-item">2</div>
+    <div class="flex-item">3</div>
+</div>
+```
+
+<Card title="Flexbox Pattern" icon="arrows-left-right">
+`space-around` creates equal spacing around each flex item, while nested flexbox on `.flex-item` centers the numbers both horizontally and vertically.
+</Card>
+
+## CSS Grid Implementations
+
+### Two-Column Project Grid
+
+The projects section uses CSS Grid to create a responsive two-column layout:
+
+```css Actividad_Css.html:38-49
+.contenedor {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Divide en dos columnas iguales */
+    gap: 10px; /* Espaciado entre columnas */
+    max-width: 400px;
+    margin: auto;
+}
+
+.columna {
+    background: linear-gradient(to right, #f8f6f6, #1cc7f1);
+    padding: 10px;
+    border-radius: 8px;
+}
+```
+
+```html Actividad_Css.html:192-201
+<div class="contenedor">
+    <div class="columna">
+        <h3>Desarrollo de Software</h3>
+        <p>Desarrollo de aplicaciones web y móviles con tecnologías como HTML, CSS, JavaScript, React, Node.js, Express, MongoDB, entre otras.</p>
+    </div>
+    <div class="columna">
+        <h3>Diseño Gráfico</h3>
+        <p>Diseño de interfaces de usuario, logotipos, ilustraciones y material gráfico para redes sociales y marketing digital.</p>
+    </div>
+</div>
+```
+
+<Note>
+**Grid Properties**:
+- `grid-template-columns: 1fr 1fr` - Creates two equal-width columns
+- `gap: 10px` - Adds spacing between grid items
+- `max-width: 400px` - Constrains the grid width
+- `margin: auto` - Centers the grid container
+</Note>
+
+### Header-Main-Footer Grid
+
+The CSS learning demo shows a classic three-row grid layout:
+
+```css ActividadCSS.html:68-80
+.grid-container {
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    gap: 10px;
+    padding: 20px;
+}
+
+.grid-container header,
+.grid-container main,
+.grid-container footer {
+    padding: 20px;
+    background-color: #2E8B57;
+    color: white;
+}
+```
+
+```html ActividadCSS.html:123-128
+<div class="grid-container">
+    <header>Header</header>
+    <main>Main</main>
+    <footer>Footer</footer>
+</div>
+```
+
+<Tip>
+**Grid Template Rows**: `auto 1fr auto` creates a layout where header and footer take only the space they need, while the main content expands to fill available space.
+</Tip>
+
+## Responsive Design
+
+### Mobile Breakpoints
+
+Both pages implement responsive behavior for screens under 600px:
+
+<CodeGroup>
+```css Actividad_Css.html:139-146
+@media (max-width: 600px) {
+    .flex-container {
+        flex-direction: column;
+    }
+    .grid-container {
+        display: block;
+    }
+}
+```
+
+```css ActividadCSS.html:82-89
+@media (max-width: 600px) {
+    .flex-container {
+        flex-direction: column;
+    }
+    .grid-container {
+        display: block;
+    }
+}
+```
+</CodeGroup>
+
+<Card title="Mobile Strategy" icon="mobile">
+On mobile devices:
+- Flexbox containers switch from row to column layout
+- Grid containers fall back to block display for linear stacking
+- This ensures content remains accessible on narrow screens
+</Card>
+
+## Layout Comparison
+
+<CardGroup cols={2}>
+<Card title="Flexbox" icon="arrows-left-right">
+**Best For:**
+- One-dimensional layouts (row or column)
+- Dynamic spacing between items
+- Centering content
+- Navigation menus
+- Icon groups
+
+**Used In:**
+- Social media icons (`.box`)
+- WhatsApp button (`.whatsapp-box`)
+- Navigation menu
+</Card>
+
+<Card title="CSS Grid" icon="grid-2">
+**Best For:**
+- Two-dimensional layouts (rows and columns)
+- Fixed column structures
+- Content cards
+- Page-level layout
+
+**Used In:**
+- Project columns (`.contenedor`)
+- Header-Main-Footer demo (`.grid-container`)
+</Card>
+</CardGroup>
+
+## Interactive Enhancements
+
+### Hover Effects with Flexbox
+
+Flexbox elements include smooth hover transitions:
+
+```css Actividad_Css.html:88-98
+.box a {
+    font-size: 30px;
+    color: #333;
+    text-decoration: none;
+    transition: color 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.box a:hover {
+    color: #007bff;
+    transform: scale(1.2);
+}
+```
+
+```css Actividad_Css.html:135-137
+.whatsapp-box:hover {
+    transform: scale(1.1); /* Efecto de agrandamiento */
+}
+```
+
+<Note>
+Hover effects use CSS transforms rather than changing layout properties, ensuring smooth animations without triggering layout recalculations.
+</Note>
+
+## Real-World Usage
+
+### Social Media Section
+
+Here's how the social icons are structured in HTML:
+
+```html Actividad_Css.html:214-226
+<section id="box-model">
+    <h2>Redes Sociales</h2>
+    <div class="box">
+        <h2>Sígueme</h2>
+        <a href="https://www.facebook.com/profile.php?id=100009198955739&locale=es_LA" target="_blank">
+            <img src="img/facebook.png.png" alt="Facebook" width="30">
+        </a>
+        <a href="https://www.instagram.com/fer.colombia/?next=%2F" target="_blank">
+            <img src="img/instagram.png.png" alt="Instagram" width="30">
+        </a>
+        <a href="https://www.linkedin.com/in/luisa-fernanda-zuleta-hurtado-4148b22b5/" target="_blank">
+            <img src="img/linkedin.png.png" alt="Linkedin" width="30">
+        </a>
+    </div>
+</section>
+```
+
+## Best Practices
+
+<CardGroup cols={2}>
+<Card title="Use Gap Property" icon="expand">
+Modern spacing with `gap` is cleaner than margin-based approaches and works consistently in both flexbox and grid.
+</Card>
+
+<Card title="Combine Both" icon="layer-group">
+Use grid for overall page structure and flexbox for component-level alignment. They complement each other perfectly.
+</Card>
+
+<Card title="Mobile First" icon="mobile-screen">
+Consider mobile layouts first, then enhance for larger screens. Use media queries to adapt layouts at key breakpoints.
+</Card>
+
+<Card title="Semantic HTML" icon="code">
+Maintain proper HTML structure (header, main, footer) even when using grid or flexbox for visual layout.
+</Card>
+</CardGroup>
+
+## Next Steps
+
+<CardGroup cols={3}>
+<Card title="Gradient Backgrounds" icon="palette" href="/features/gradient-backgrounds">
+See how gradients enhance these layouts
+</Card>
+
+<Card title="Social Integration" icon="share-nodes" href="/features/social-integration">
+Learn about the social media features
+</Card>
+
+<Card title="WhatsApp Contact" icon="message" href="/features/whatsapp-contact">
+Dive deeper into the contact feature
+</Card>
+</CardGroup>

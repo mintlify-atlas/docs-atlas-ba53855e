@@ -1,0 +1,197 @@
+---
+title: 'Color Scheme'
+description: 'Complete color palette and gradient system used throughout the portfolio'
+icon: 'palette'
+---
+
+## Overview
+
+The portfolio uses a cohesive color scheme built around cyan, blue, and green tones, creating a modern and professional aesthetic. The design leverages gradients extensively to add depth and visual interest.
+
+## Primary Colors
+
+<CardGroup cols={2}>
+  <Card title="Text Primary" icon="text">
+    **RGB:** `rgb(20, 16, 24)`  
+    **Hex:** `#141018`  
+    Used for main headings (h1)
+  </Card>
+  
+  <Card title="Text Secondary" icon="text">
+    **RGB:** `rgb(36, 55, 73)`  
+    **Hex:** `#243749`  
+    Used in header sections
+  </Card>
+  
+  <Card title="Text Dark" icon="text">
+    **RGB:** `rgb(24, 22, 22)`  
+    **Hex:** `#181616`  
+    Used in section content
+  </Card>
+  
+  <Card title="Text Base" icon="text">
+    **Hex:** `#333`  
+    Default body text color
+  </Card>
+</CardGroup>
+
+## Background Colors
+
+### Solid Backgrounds
+
+| Element | Color | Hex/RGB | Usage |
+|---------|-------|---------|-------|
+| Box Model | `#c5eaf8` | Light cyan | Social media box background |
+| Base Box | `#fff` | White | Content boxes |
+| Footer (index.html) | `black` | `#000000` | Footer background |
+| CSS Demo | `#f5f5f5` | Light gray | Page background |
+| Accent Green | `#4CAF50` | Green | Buttons and boxes (CSS demo) |
+
+### Gradient Backgrounds
+
+<Note>
+The portfolio makes extensive use of linear gradients to create dynamic, modern backgrounds.
+</Note>
+
+#### Main Portfolio Gradients
+
+**Body Background - Main Portfolio**
+```css
+background: linear-gradient(to left, rgba(5, 240, 248, 0.849), rgba(176, 208, 212, 0.7));
+```
+- **From:** `rgba(5, 240, 248, 0.849)` - Bright cyan with transparency
+- **To:** `rgba(176, 208, 212, 0.7)` - Muted blue-gray with transparency
+- **Direction:** Right to left
+
+**Header Gradient**
+```css
+background: linear-gradient(90deg, #5eabf3, #c4f1ef);
+```
+- **From:** `#5eabf3` - Blue
+- **To:** `#c4f1ef` - Light cyan
+- **Direction:** Left to right (90deg)
+
+**Section Background**
+```css
+background: linear-gradient(to right, #02b5d4, #dad8d7);
+```
+- **From:** `#02b5d4` - Dark cyan
+- **To:** `#dad8d7` - Light gray
+- **Direction:** Left to right
+
+**Column Gradient**
+```css
+background: linear-gradient(to right, #f8f6f6, #1cc7f1);
+```
+- **From:** `#f8f6f6` - Off-white
+- **To:** `#1cc7f1` - Bright cyan
+- **Direction:** Left to right
+
+**WhatsApp Box Gradient**
+```css
+background: linear-gradient(to right, #0a0a0a, #52dff5);
+```
+- **From:** `#0a0a0a` - Nearly black
+- **To:** `#52dff5` - Cyan
+- **Direction:** Left to right
+
+#### Index.html Gradient (Early Version)
+
+**Body Background**
+```css
+background-image: linear-gradient(to right, rgba(44, 54, 58, 0.7), rgba(185, 116, 253, 0.7));
+```
+- **From:** `rgba(44, 54, 58, 0.7)` - Dark gray with transparency
+- **To:** `rgba(185, 116, 253, 0.7)` - Purple with transparency
+
+#### CSS Learning Demo Gradients
+
+**Header Gradient**
+```css
+background: linear-gradient(90deg, #4CAF50, #2E8B57);
+```
+- **From:** `#4CAF50` - Medium green
+- **To:** `#2E8B57` - Sea green
+
+**Gradient Box**
+```css
+background: linear-gradient(to right, #ff7e5f, #feb47b);
+```
+- **From:** `#ff7e5f` - Coral red
+- **To:** `#feb47b` - Peach orange
+
+## Link Colors
+
+| State | Color | Hex/RGB | Usage |
+|-------|-------|---------|-------|
+| Default | `rgb(51, 82, 117)` | `#335275` | Navigation links |
+| Default (alt) | `#333` | Gray | Social media links |
+| Hover | `#007bff` | Bootstrap blue | Hover state for social icons |
+| WhatsApp | `white` | `#ffffff` | WhatsApp contact link |
+
+## Border Colors
+
+| Element | Color | Usage |
+|---------|-------|-------|
+| Social Box | `#fbfdfb` | 4px solid border on social media box |
+| CSS Demo Box | `#4CAF50` | 4px solid border on demo boxes |
+
+## Accent & Highlight Colors
+
+<CardGroup cols={2}>
+  <Card title="Highlight" icon="highlighter">
+    **Color:** `yellowgreen`  
+    Used for highlighting important text
+  </Card>
+  
+  <Card title="Footer Text (index)" icon="text">
+    **RGB:** `rgb(50, 51, 114)`  
+    **Hex:** `#323372`  
+    Footer text color
+  </Card>
+</CardGroup>
+
+## Shadow Effects
+
+The portfolio uses subtle shadows to add depth:
+
+```css
+box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+```
+
+- **Offset:** 5px horizontal, 5px vertical
+- **Blur:** 15px
+- **Color:** Black with 20% opacity
+
+## Usage Guidelines
+
+<Note>
+All gradients use CSS linear-gradient with directional control (to left, to right, 90deg) to maintain consistency across the design.
+</Note>
+
+### Color Accessibility
+
+- Primary text colors (`#141018`, `#333`) provide strong contrast against light backgrounds
+- White text is used exclusively on dark gradient backgrounds for readability
+- Link colors (`#335275`) are distinguishable from regular text
+
+### Implementation Example
+
+```html
+<!-- Header with gradient -->
+<header style="background: linear-gradient(90deg, #5eabf3, #c4f1ef);">
+  <h1 style="color: rgb(36, 55, 73);">Luisa Fernanda Zuleta Hurtado</h1>
+</header>
+
+<!-- Section with gradient background -->
+<section style="background: linear-gradient(to right, #02b5d4, #dad8d7); color: rgb(24, 22, 22);">
+  <h2>Perfil Profesional</h2>
+  <p>Content here...</p>
+</section>
+```
+
+## References
+
+- Main portfolio: `Actividad_Css.html:10-147`
+- Index page: `index.html:9-31`
+- CSS demo: `ActividadCSS.html:10-89`

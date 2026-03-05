@@ -1,0 +1,319 @@
+---
+title: 'HTML Structure'
+description: 'Deep dive into the HTML5 semantic structure of the portfolio landing page'
+---
+
+## Overview
+
+The portfolio landing page uses modern HTML5 semantic elements to create a well-structured, accessible, and SEO-friendly document. This page documents the structural patterns used across the three versions of the portfolio.
+
+## Document Structure
+
+### HTML5 Doctype and Language
+
+All portfolio pages begin with the HTML5 doctype declaration and specify Spanish as the primary language:
+
+```html
+<!DOCTYPE html>
+<html lang="es">
+```
+
+<Note>
+Setting the `lang` attribute to "es" helps screen readers, search engines, and browsers properly interpret the content.
+</Note>
+
+### Meta Information
+
+The `<head>` section includes essential meta tags for proper rendering and responsive design:
+
+```html
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luisa Fernanda Zuleta Hurtado</title>
+</head>
+```
+
+**Key Meta Tags:**
+- `charset="UTF-8"` - Ensures proper character encoding for Spanish characters and accents
+- `viewport` - Enables responsive design by controlling page dimensions and scaling on mobile devices
+
+## Semantic HTML Elements
+
+### Navigation Structure
+
+The portfolio implements a simple yet effective navigation menu using semantic `<nav>` elements:
+
+<CodeGroup>
+```html index.html
+<nav>
+    <ul>
+        <li><a href="#perfil-profesional">Perfil Profesional</a></li>
+        <li><a href="#hobbies">Hobbies</a></li>
+        <li><a href="#proyectos">Proyectos</a></li>
+        <li><a href="#redes-sociales">Redes Sociales</a></li>
+    </ul>
+</nav>
+```
+
+```html Actividad_Css.html
+<nav>
+    <ul>
+        <li><a href="#perfil-profesional">Perfil Profesional</a></li>
+        <li><a href="#hobbies">Hobbies</a></li>
+        <li><a href="#proyectos">Proyectos</a></li>
+        <li><a href="#redes-sociales">Redes Sociales</a></li>
+    </ul>
+</nav>
+```
+</CodeGroup>
+
+**Navigation Features:**
+- Uses unordered list (`<ul>`) for semantic grouping
+- Implements hash-based anchor links for single-page navigation
+- Consistent across all portfolio versions
+
+### Header Element
+
+The header contains the main page title and branding:
+
+<Tabs>
+  <Tab title="Basic Version">
+    ```html
+    <header>
+        <h1>Perfil de Desarrollador de Software</h1>
+    </header>
+    ```
+  </Tab>
+  <Tab title="Full Portfolio">
+    ```html
+    <header>
+        <h1>Luisa Fernanda Zuleta Hurtado</h1>
+    </header>
+    ```
+  </Tab>
+  <Tab title="CSS Demo">
+    ```html
+    <header>
+        <h1>Aprende CSS desde Cero</h1>
+    </header>
+    ```
+  </Tab>
+</Tabs>
+
+## Content Sections
+
+### Main Content Area
+
+The portfolio uses the `<main>` element to wrap the primary content (in styled versions):
+
+```html
+<main>
+    <img src="img/Fer.jpeg" alt="Luisa Fernanda Zuleta Hurtado" class="profile-img">
+    
+    <section id="perfil-profesional">
+        <!-- Professional profile content -->
+    </section>
+    
+    <!-- Additional sections -->
+</main>
+```
+
+### Section Elements
+
+Each portfolio area is organized using semantic `<section>` elements with unique IDs:
+
+#### 1. Professional Profile Section
+
+```html
+<section id="perfil-profesional">
+    <section class="section">
+        <h2>Perfil Profesional</h2>
+        <p>Desarrolladora de software, diseñadora gráfica y community manager 
+        con un historial probado en la creación de productos digitales exitosos...</p>
+    </section>
+</section>
+```
+
+<Note>
+The professional profile uses nested sections - the outer section for navigation targeting, and an inner styled section for visual presentation.
+</Note>
+
+#### 2. Hobbies Section
+
+```html
+<section id="hobbies">
+    <h2>Hobbies</h2>
+    <p>📖Lectura<br>
+    🚲Ciclismo<br>
+    🎼Música<br>
+    ✈️Viajes</p>
+</section>
+```
+
+#### 3. Projects Section
+
+The projects section demonstrates more complex HTML structure with grid layouts:
+
+```html
+<section id="proyectos">
+    <h2>Proyectos Personales y Profesionales</h2>
+    <div class="columna">
+        <h2>Experiencia y Logros:</h2>
+        <ul>
+            <li><a href="https://fernanda-ucp.atlassian.net/...">Jira</a></li>
+            <p>Desarrolladora y Diseñadora en VirtualMind - Proyecto de Innovación Educativa</p>
+            
+            <div class="contenedor">
+                <div class="columna">
+                    <h3>Desarrollo de Software</h3>
+                    <p>Desarrollo de aplicaciones web y móviles...</p>
+                </div>
+                <div class="columna">
+                    <h3>Diseño Gráfico</h3>
+                    <p>Diseño de interfaces de usuario...</p>
+                </div>
+            </div>
+            
+            <li><a href="https://hondasupermotos.com/">Honda Supermotos</a></li>
+            <img src="img/honda.jpg" alt="GSM" width="80">
+        </ul>
+    </div>
+</section>
+```
+
+<Warning>
+The projects section mixes `<li>` and `<div>` elements inside the unordered list. While this works, it's not semantically ideal. Consider restructuring for better HTML validity.
+</Warning>
+
+#### 4. Social Networks Section
+
+```html
+<section id="box-model">
+    <h2>Redes Sociales</h2>
+    <div class="box">
+        <h2>Sígueme</h2>
+        <a href="https://www.facebook.com/..." target="_blank">
+            <img src="img/facebook.png.png" alt="Facebook" width="30">
+        </a>
+        <a href="https://www.instagram.com/..." target="_blank">
+            <img src="img/instagram.png.png" alt="Instagram" width="30">
+        </a>
+        <a href="https://www.linkedin.com/..." target="_blank">
+            <img src="img/linkedin.png.png" alt="Linkedin" width="30">
+        </a>
+    </div>
+</section>
+```
+
+**Key Features:**
+- Uses `target="_blank"` for external links to open in new tabs
+- Implements accessible image alt text
+- Groups social links in a styled container
+
+### WhatsApp Contact Component
+
+A custom contact section with special styling:
+
+```html
+<div class="whatsapp-box">
+    <img src="img/whatsapp.png" alt="WhatsApp">
+    <a href="https://w.app/virtualmind" target="_blank">Contáctame</a>
+</div>
+```
+
+## Footer Element
+
+The footer provides copyright information using the semantic `<footer>` element:
+
+```html
+<footer>
+    <p>&copy; 2025 Luisa Fernanda Zuleta</p>
+</footer>
+```
+
+## Layout Patterns
+
+### Grid Container Structure
+
+The CSS demo page showcases a grid-based layout pattern:
+
+```html
+<div class="grid-container">
+    <header>Header</header>
+    <main>Main</main>
+    <footer>Footer</footer>
+</div>
+```
+
+### Flexbox Container Structure
+
+Demonstrates flexible box layout with multiple items:
+
+```html
+<div class="flex-container">
+    <div class="flex-item">1</div>
+    <div class="flex-item">2</div>
+    <div class="flex-item">3</div>
+</div>
+```
+
+## Accessibility Features
+
+### Alt Text for Images
+
+All images include descriptive alt text:
+
+```html
+<img src="img/Fer.jpeg" alt="Luisa Fernanda Zuleta Hurtado" class="profile-img">
+<img src="img/facebook.png.png" alt="Facebook" width="30">
+<img src="img/linkedin.png.png" alt="Linkedin" width="30">
+```
+
+### Semantic Heading Hierarchy
+
+Proper heading structure from `<h1>` to `<h3>`:
+
+```html
+<h1>Luisa Fernanda Zuleta Hurtado</h1>           <!-- Page title -->
+<h2>Perfil Profesional</h2>                       <!-- Section titles -->
+<h3>Desarrollo de Software</h3>                   <!-- Subsection titles -->
+```
+
+### Link Accessibility
+
+External links properly indicate they open in new windows:
+
+```html
+<a href="https://www.linkedin.com/..." target="_blank">
+```
+
+<Note>
+Consider adding `rel="noopener noreferrer"` to external links with `target="_blank"` for security and performance.
+</Note>
+
+## Best Practices Implemented
+
+✅ **HTML5 Semantic Elements** - Uses `<header>`, `<nav>`, `<main>`, `<section>`, `<footer>`  
+✅ **Accessible Navigation** - Hash-based anchor links for smooth single-page navigation  
+✅ **Responsive Meta Tag** - Viewport configuration for mobile devices  
+✅ **Proper Character Encoding** - UTF-8 for international character support  
+✅ **Alt Text on Images** - Descriptive text for screen readers  
+✅ **Semantic Heading Hierarchy** - Logical progression of heading levels  
+
+## Areas for Improvement
+
+Consider these enhancements to the HTML structure:
+
+1. **Add ARIA landmarks** for better screen reader navigation
+2. **Include `rel="noopener noreferrer"`** on external links
+3. **Restructure project list** to avoid mixing content types in `<ul>`
+4. **Add meta description** for better SEO
+5. **Use `<article>` tags** for self-contained content like project entries
+6. **Add skip navigation link** for keyboard users
+
+---
+
+<Note>
+The HTML structure follows modern web standards and provides a solid foundation for the CSS styling documented in the [CSS Styling](/technical/css-styling) page.
+</Note>

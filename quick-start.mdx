@@ -1,0 +1,430 @@
+---
+title: 'Quick Start Guide'
+description: 'Learn how to view, customize, and deploy the portfolio landing page'
+---
+
+## Getting Started
+
+This guide will help you view, customize, and deploy Luisa Fernanda Zuleta's portfolio landing page. Follow these steps to get up and running quickly.
+
+<Steps>
+  <Step title="View the Portfolio">
+    Open any of the HTML files in your web browser to view the portfolio
+  </Step>
+  <Step title="Customize Content">
+    Edit the HTML files to personalize the content and styling
+  </Step>
+  <Step title="Test Responsiveness">
+    Verify the responsive design across different screen sizes
+  </Step>
+  <Step title="Deploy">
+    Upload to your hosting provider or use a static site hosting service
+  </Step>
+</Steps>
+
+## Viewing the Portfolio
+
+### Local Development
+
+To view the portfolio locally, simply open any HTML file in your preferred web browser:
+
+<CodeGroup>
+```bash macOS
+open ~/workspace/source/Actividad_Css.html
+```
+
+```bash Linux
+xdg-open ~/workspace/source/Actividad_Css.html
+```
+
+```bash Windows
+start ~/workspace/source/Actividad_Css.html
+```
+</CodeGroup>
+
+### Available Pages
+
+The portfolio includes three HTML pages, each serving a specific purpose:
+
+<CardGroup cols={3}>
+  <Card title="Actividad_Css.html" icon="star" color="#5eabf3">
+    **Main Portfolio**
+    
+    Full-featured portfolio with all sections, styling, and interactive elements
+  </Card>
+  <Card title="ActividadCSS.html" icon="graduation-cap" color="#4CAF50">
+    **CSS Learning**
+    
+    Demonstrates CSS concepts including box model, flexbox, and grid
+  </Card>
+  <Card title="index.html" icon="file" color="#feb47b">
+    **Basic Template**
+    
+    Simple starting template with core structure
+  </Card>
+</CardGroup>
+
+## Customizing the Portfolio
+
+### Update Personal Information
+
+Edit the main portfolio file to personalize the content:
+
+```html Actividad_Css.html
+<header>
+    <h1>Your Name Here</h1>
+</header>
+
+<section id="perfil-profesional">
+    <section class="section">
+        <h2>Perfil Profesional</h2>
+        <p>Your professional description here...</p>
+    </section>
+</section>
+```
+
+<Tip>
+Replace "Luisa Fernanda Zuleta Hurtado" with your own name and update the professional description to match your experience.
+</Tip>
+
+### Customize Colors and Gradients
+
+The portfolio uses modern CSS gradients that you can easily customize:
+
+```css
+/* Body background gradient */
+body {
+    background: linear-gradient(to left, rgba(5, 240, 248, 0.849), rgba(176, 208, 212, 0.7));
+}
+
+/* Header gradient */
+header {
+    background: linear-gradient(90deg, #5eabf3, #c4f1ef);
+}
+
+/* Section backgrounds */
+.section {
+    background: linear-gradient(to right, #02b5d4, #dad8d7);
+}
+```
+
+<Note>
+Gradients use two or more colors. Adjust the hex values to match your brand colors.
+</Note>
+
+### Update Social Media Links
+
+Modify the social media section to link to your own profiles:
+
+```html
+<section id="box-model">
+    <h2>Redes Sociales</h2>
+    <div class="box">
+        <h2>Sígueme</h2>
+        <a href="YOUR_FACEBOOK_URL" target="_blank">
+            <img src="img/facebook.png.png" alt="Facebook" width="30">
+        </a>
+        <a href="YOUR_INSTAGRAM_URL" target="_blank">
+            <img src="img/instagram.png.png" alt="Instagram" width="30">
+        </a>
+        <a href="YOUR_LINKEDIN_URL" target="_blank">
+            <img src="img/linkedin.png.png" alt="Linkedin" width="30">
+        </a>
+    </div>
+</section>
+```
+
+### Add Your Projects
+
+Update the projects section with your own work experience:
+
+```html
+<section id="proyectos">
+    <h2>Proyectos Personales y Profesionales</h2>
+    <div class="columna">
+        <h2>Experiencia y Logros:</h2>
+        <ul>
+            <li><a href="YOUR_PROJECT_URL">Project Name</a></li>
+            <p>Brief description of your role and accomplishments</p>
+            <img src="img/your-logo.jpg" alt="Company Logo" width="80">
+        </ul>
+    </div>
+</section>
+```
+
+### Update Profile Image
+
+Replace the profile image with your own photo:
+
+1. Place your image in the `img/` directory
+2. Update the image source in the HTML:
+
+```html
+<img src="img/your-photo.jpeg" alt="Your Name" class="profile-img">
+```
+
+<Info>
+The `.profile-img` class automatically sizes the image to 250px width while maintaining aspect ratio.
+</Info>
+
+## Responsive Design Testing
+
+The portfolio includes built-in responsive design. Test it across different screen sizes:
+
+### Using Browser DevTools
+
+<Steps>
+  <Step title="Open Developer Tools">
+    Press F12 or right-click and select "Inspect"
+  </Step>
+  <Step title="Toggle Device Toolbar">
+    Click the device icon or press Ctrl+Shift+M (Cmd+Shift+M on Mac)
+  </Step>
+  <Step title="Test Different Sizes">
+    Select various device presets or drag to resize the viewport
+  </Step>
+</Steps>
+
+### Responsive Breakpoints
+
+The portfolio uses a mobile-first approach with breakpoints at:
+
+```css
+@media (max-width: 600px) {
+    .flex-container {
+        flex-direction: column;
+    }
+    .grid-container {
+        display: block;
+    }
+}
+```
+
+<Warning>
+When customizing, ensure your changes maintain responsiveness by testing on mobile devices.
+</Warning>
+
+## Understanding the CSS Architecture
+
+### Layout Systems
+
+The portfolio demonstrates two modern CSS layout systems:
+
+#### Flexbox for Social Icons
+
+```css
+.box {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    align-items: center;
+}
+```
+
+**Key Properties:**
+- `display: flex` - Enables flexbox
+- `gap` - Spacing between items
+- `justify-content: center` - Horizontal centering
+- `align-items: center` - Vertical centering
+
+#### Grid for Content Sections
+
+```css
+.contenedor {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    max-width: 400px;
+    margin: auto;
+}
+```
+
+**Key Properties:**
+- `display: grid` - Enables CSS Grid
+- `grid-template-columns` - Defines two equal columns
+- `gap` - Spacing between grid items
+
+### Interactive Effects
+
+The portfolio includes smooth hover effects:
+
+```css
+.box a:hover {
+    color: #007bff;
+    transform: scale(1.2);
+}
+
+.box img:hover {
+    transform: scale(1.2);
+}
+```
+
+<Tip>
+The `transition` property enables smooth animations. Adjust the duration (e.g., `0.3s`) to control animation speed.
+</Tip>
+
+## Deployment Options
+
+### Option 1: GitHub Pages (Free)
+
+<Steps>
+  <Step title="Create GitHub Repository">
+    Create a new repository on GitHub
+  </Step>
+  <Step title="Push Your Files">
+    ```bash
+    git init
+    git add .
+    git commit -m "Initial commit"
+    git remote add origin YOUR_REPO_URL
+    git push -u origin main
+    ```
+  </Step>
+  <Step title="Enable GitHub Pages">
+    Go to repository Settings > Pages > Select main branch
+  </Step>
+  <Step title="Access Your Site">
+    Your portfolio will be available at `https://yourusername.github.io/repo-name/`
+  </Step>
+</Steps>
+
+### Option 2: Netlify (Free)
+
+<Steps>
+  <Step title="Sign Up">
+    Create a free account at [netlify.com](https://www.netlify.com)
+  </Step>
+  <Step title="Drag and Drop">
+    Drag your source folder to the Netlify dashboard
+  </Step>
+  <Step title="Deploy">
+    Netlify automatically deploys your site
+  </Step>
+  <Step title="Custom Domain">
+    Optionally configure a custom domain in site settings
+  </Step>
+</Steps>
+
+### Option 3: Vercel (Free)
+
+```bash
+# Install Vercel CLI
+npm install -g vercel
+
+# Deploy from your project directory
+cd ~/workspace/source
+vercel
+```
+
+<CardGroup cols={3}>
+  <Card title="GitHub Pages" icon="github">
+    Perfect for simple static sites with GitHub integration
+  </Card>
+  <Card title="Netlify" icon="cloud" color="#00C7B7">
+    Easy drag-and-drop deployment with instant previews
+  </Card>
+  <Card title="Vercel" icon="triangle" color="#000000">
+    Fast global CDN with CLI deployment
+  </Card>
+</CardGroup>
+
+## File Structure
+
+Understanding the portfolio's file organization:
+
+```
+source/
+├── index.html                  # Basic template
+├── Actividad_Css.html         # Main portfolio (recommended)
+├── ActividadCSS.html          # CSS learning showcase
+├── img/                       # Image assets
+│   ├── Fer.jpeg              # Profile photo
+│   ├── facebook.png.png      # Social icons
+│   ├── instagram.png.png
+│   ├── linkedin.png.png
+│   ├── whatsapp.png
+│   ├── honda.jpg             # Project logos
+│   └── logo hor.png
+└── styles.css                # External stylesheet (optional)
+```
+
+<Info>
+The main portfolio (`Actividad_Css.html`) contains inline styles, but you can extract them to `styles.css` for better organization.
+</Info>
+
+## Optimization Tips
+
+### Performance Optimization
+
+1. **Compress Images**: Reduce image file sizes without losing quality
+2. **Minify CSS**: Remove unnecessary whitespace and comments
+3. **Use WebP Format**: Modern image format for better compression
+
+### SEO Best Practices
+
+```html
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfolio of Luisa Fernanda Zuleta - Software Developer, Graphic Designer, Community Manager">
+    <meta name="keywords" content="software developer, graphic designer, community manager, web development">
+    <title>Luisa Fernanda Zuleta Hurtado - Portfolio</title>
+</head>
+```
+
+### Accessibility Improvements
+
+- **Alt Text**: Ensure all images have descriptive `alt` attributes
+- **Semantic HTML**: Use proper heading hierarchy (h1, h2, h3)
+- **Contrast**: Verify text has sufficient contrast against backgrounds
+- **Keyboard Navigation**: Test that all interactive elements are keyboard accessible
+
+<Warning>
+Always test your portfolio on multiple browsers (Chrome, Firefox, Safari, Edge) before deploying.
+</Warning>
+
+## Next Steps
+
+<CardGroup cols={2}>
+  <Card title="Customize Content" icon="pen" color="#5eabf3">
+    Update text, images, and links to match your profile
+  </Card>
+  <Card title="Enhance Design" icon="wand-magic-sparkles" color="#feb47b">
+    Experiment with colors, layouts, and animations
+  </Card>
+  <Card title="Add Features" icon="plus" color="#4CAF50">
+    Integrate contact forms, analytics, or additional sections
+  </Card>
+  <Card title="Deploy Live" icon="rocket" color="#02b5d4">
+    Choose a hosting platform and make your portfolio public
+  </Card>
+</CardGroup>
+
+<Tip>
+Need help? Review the CSS Learning page (`ActividadCSS.html`) to understand the fundamental concepts used throughout the portfolio.
+</Tip>
+
+## Troubleshooting
+
+### Images Not Loading
+
+If images don't display:
+1. Verify the `img/` directory exists
+2. Check that image filenames match exactly (case-sensitive)
+3. Ensure relative paths are correct
+
+### Layout Issues on Mobile
+
+If the layout breaks on mobile:
+1. Check that the viewport meta tag is present
+2. Verify media queries are not overridden
+3. Test with actual mobile devices, not just DevTools
+
+### Styling Not Applied
+
+If custom styles don't appear:
+1. Clear browser cache (Ctrl+Shift+R or Cmd+Shift+R)
+2. Check for CSS syntax errors
+3. Verify style tags are inside the `<head>` section
+
+For additional support or questions, connect via the WhatsApp link in the portfolio or through social media channels.

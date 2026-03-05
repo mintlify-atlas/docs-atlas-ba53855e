@@ -1,0 +1,309 @@
+---
+title: 'Typography'
+description: 'Font families, sizes, and text styling used across the portfolio'
+icon: 'font'
+---
+
+## Overview
+
+The portfolio employs a carefully selected typography system that balances professionalism with readability. Different font families are used strategically across various HTML files to create distinct visual identities for different sections.
+
+## Font Families
+
+### Main Portfolio (Actividad_Css.html)
+
+<Card title="Primary Font Stack" icon="text-size">
+```css
+font-family: Georgia, 'Times New Roman', Times, serif, sans-serif;
+```
+**Applied to:** Body text  
+**Fallback chain:** Georgia → Times New Roman → Times → serif → sans-serif  
+**Character:** Classic, professional, elegant
+</Card>
+
+<Note>
+This serif font choice gives the portfolio a sophisticated, professional appearance while maintaining excellent readability.
+</Note>
+
+### Index Page (index.html)
+
+<Card title="Monospace Font Stack" icon="code">
+```css
+font-family: 'Courier New', Courier, monospace;
+```
+**Applied to:** H1 headings  
+**Fallback chain:** Courier New → Courier → monospace  
+**Character:** Technical, developer-focused
+</Card>
+
+### CSS Demo (ActividadCSS.html)
+
+<Card title="Sans-Serif Font Stack" icon="text-width">
+```css
+font-family: Arial, sans-serif;
+```
+**Applied to:** Body and H1  
+**Fallback chain:** Arial → sans-serif  
+**Character:** Clean, modern, web-standard
+</Card>
+
+## Font Sizes
+
+### Heading Sizes
+
+<CardGroup cols={2}>
+  <Card title="H1 - Main Portfolio" icon="heading">
+    **Size:** `40px`  
+    **Color:** `rgb(20, 16, 24)`  
+    Used for the main page title
+  </Card>
+  
+  <Card title="H1 - Index & CSS Demo" icon="heading">
+    **Size:** `48px`  
+    **Color:** `rgb(20, 16, 24)`  
+    Used for larger, more prominent headings
+  </Card>
+  
+  <Card title="Header Element" icon="rectangle-code">
+    **Size:** `1.5em`  
+    Applied to header sections  
+    Relative sizing for scalability
+  </Card>
+  
+  <Card title="Links (large)" icon="link">
+    **Size:** `18px`  
+    Used for WhatsApp contact link  
+    Emphasis on call-to-action
+  </Card>
+</CardGroup>
+
+### Icon & Special Text Sizes
+
+| Element | Size | Context |
+|---------|------|---------|
+| Social media icons (text) | `30px` | Box social links |
+| Default text | Inherited | Body text follows browser defaults |
+
+## Font Weights
+
+<Card title="Bold Weight" icon="bold">
+**Weight:** `bold`  
+**Applied to:** Navigation links  
+**Location:** `Actividad_Css.html:65`
+
+```css
+nav ul li a {
+    font-weight: bold;
+}
+```
+</Card>
+
+<Card title="WhatsApp Link" icon="font-awesome">
+**Weight:** `bold`  
+**Applied to:** WhatsApp contact link  
+**Location:** `Actividad_Css.html:132`
+
+```css
+.whatsapp-box a {
+    font-weight: bold;
+}
+```
+</Card>
+
+## Text Styling & Effects
+
+### Text Decoration
+
+**Navigation Links**
+```css
+nav ul li a {
+    text-decoration: none;
+}
+```
+- Clean, modern link appearance without underlines
+- Applied to all navigation elements
+
+**Social Media Links**
+```css
+.box a {
+    text-decoration: none;
+}
+```
+- Icon links without decoration for cleaner look
+
+### Text Alignment
+
+**Centered Text**
+```css
+body {
+    text-align: center;
+}
+```
+- All portfolio pages use centered text alignment
+- Creates a focused, symmetrical layout
+
+**Footer Alignment (index.html)**
+```css
+#footer {
+    text-align: center;
+}
+```
+
+## Hover Effects
+
+### Link Color Transitions
+
+```css
+.box a {
+    transition: color 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.box a:hover {
+    color: #007bff;
+    transform: scale(1.2);
+}
+```
+
+- Smooth color transition over 0.3 seconds
+- Hover color: Bootstrap blue (`#007bff`)
+- Combined with scale transformation for emphasis
+
+## Typography System by Section
+
+### Navigation
+
+<Card>
+**Font:** Georgia/Times New Roman (serif)  
+**Weight:** Bold  
+**Color:** `rgb(51, 82, 117)` (`#335275`)  
+**Size:** Inherited from body  
+**Decoration:** None
+
+```css
+nav ul li a {
+    color: rgb(51, 82, 117);
+    text-decoration: none;
+    font-weight: bold;
+}
+```
+</Card>
+
+### Headers
+
+<Card>
+**Font:** Georgia/Times New Roman (serif)  
+**Size:** 1.5em  
+**Color:** `rgb(36, 55, 73)` (`#243749`)  
+**Background:** Gradient
+
+```css
+header {
+    background: linear-gradient(90deg, #5eabf3, #c4f1ef);
+    font-size: 1.5em;
+    color: rgb(36, 55, 73);
+}
+```
+</Card>
+
+### Body Content
+
+<Card>
+**Font:** Georgia/Times New Roman (serif)  
+**Color:** `#333`  
+**Margins:** 40px  
+**Padding:** 40px
+
+```css
+body {
+    font-family: Georgia, 'Times New Roman', Times, serif, sans-serif;
+    color: #333;
+}
+```
+</Card>
+
+### Sections
+
+<Card>
+**Color:** `rgb(24, 22, 22)` (`#181616`)  
+**Padding:** 20px
+
+```css
+.section {
+    color: rgb(24, 22, 22);
+    padding: 20px;
+}
+```
+</Card>
+
+## Responsive Typography
+
+<Note>
+While explicit responsive font sizes aren't defined, the use of `em` units in headers allows for proportional scaling based on parent elements.
+</Note>
+
+```css
+@media (max-width: 600px) {
+    .flex-container {
+        flex-direction: column;
+    }
+}
+```
+
+Mobile devices inherit the same font sizes but benefit from layout adjustments.
+
+## Implementation Examples
+
+### Hero Section
+```html
+<header style="font-size: 1.5em; color: rgb(36, 55, 73);">
+  <h1 style="font-size: 40px; color: rgb(20, 16, 24);">
+    Luisa Fernanda Zuleta Hurtado
+  </h1>
+</header>
+```
+
+### Navigation
+```html
+<nav>
+  <ul>
+    <li>
+      <a href="#perfil" style="color: rgb(51, 82, 117); font-weight: bold; text-decoration: none;">
+        Perfil Profesional
+      </a>
+    </li>
+  </ul>
+</nav>
+```
+
+### Call-to-Action Link
+```html
+<a href="#contact" style="color: white; font-size: 18px; font-weight: bold;">
+  Contáctame
+</a>
+```
+
+## Best Practices
+
+<CardGroup cols={2}>
+  <Card title="Consistency" icon="check">
+    Use the Georgia serif stack consistently across the main portfolio for brand cohesion
+  </Card>
+  
+  <Card title="Hierarchy" icon="layer-group">
+    Maintain clear size differences between H1 (40-48px) and body text for visual hierarchy
+  </Card>
+  
+  <Card title="Readability" icon="glasses">
+    Dark text colors (#333, #141018) on light backgrounds ensure optimal readability
+  </Card>
+  
+  <Card title="Interactivity" icon="hand-pointer">
+    Use bold weights and color transitions for interactive elements like navigation links
+  </Card>
+</CardGroup>
+
+## References
+
+- Main portfolio typography: `Actividad_Css.html:11-132`
+- Index page typography: `index.html:16-19`
+- CSS demo typography: `ActividadCSS.html:11-22`

@@ -1,0 +1,677 @@
+---
+title: 'CSS Styling'
+description: 'Comprehensive guide to CSS styling techniques, selectors, and visual design patterns used in the portfolio'
+---
+
+## Overview
+
+The portfolio employs embedded CSS styling with modern techniques including gradients, flexbox, grid, animations, and responsive design. All styles are defined within `<style>` tags in the document head.
+
+## CSS Architecture
+
+### Embedded Styles
+
+All three portfolio versions use embedded stylesheets within the HTML document:
+
+```html
+<head>
+    <style>
+        /* All CSS rules defined here */
+    </style>
+</head>
+```
+
+<Note>
+While external stylesheets are generally preferred for production, embedded styles are used here for simplicity and portability of the single-page portfolio.
+</Note>
+
+## Selectors and Specificity
+
+### Element Selectors
+
+Basic styling applied to fundamental HTML elements:
+
+```css
+body {
+    font-family: Georgia, 'Times New Roman', Times, serif, sans-serif;
+    margin: 40px;
+    padding: 40px;
+    background: linear-gradient(to left, rgba(5, 240, 248, 0.849), rgba(176, 208, 212, 0.7));
+    color: #333;
+    text-align: center;
+}
+
+h1 {
+    color: rgb(20, 16, 24);
+    font-size: 40px;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    border-radius: 5px;
+}
+```
+
+**Key Techniques:**
+- **Font stacking** with fallback fonts
+- **Responsive images** using `max-width: 100%`
+- **Auto margins** for horizontal centering
+- **Border radius** for rounded corners
+
+### Class Selectors
+
+Reusable style classes for component-based design:
+
+<CodeGroup>
+```css Box Component
+.box {
+    width: 300px;
+    padding: 20px;
+    margin: 30px auto;
+    border: 4px solid #fbfdfb;
+    border-radius: 10px;
+    background-color: #c5eaf8;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    align-items: center;
+}
+```
+
+```css Section Component
+.section {
+    width: 100%;
+    padding: 20px;
+    background: linear-gradient(to right, #02b5d4, #dad8d7);
+    color: rgb(24, 22, 22);
+}
+```
+
+```css Profile Image
+.profile-img {
+    width: 250px;
+    height: auto;
+}
+```
+</CodeGroup>
+
+### ID Selectors
+
+Unique styling for specific page elements:
+
+```css
+#footer {
+    background-color: black;
+    color: rgb(50, 51, 114);
+    text-align: center;
+    padding: 10px;
+}
+```
+
+### Descendant Selectors
+
+Targeting nested elements within specific containers:
+
+```css
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: rgb(51, 82, 117);
+    text-decoration: none;
+    font-weight: bold;
+}
+```
+
+## Color and Background Techniques
+
+### Linear Gradients
+
+The portfolio extensively uses CSS gradients for visual appeal:
+
+<Tabs>
+  <Tab title="Body Background">
+    ```css
+    body {
+        background: linear-gradient(to left, rgba(5, 240, 248, 0.849), rgba(176, 208, 212, 0.7));
+    }
+    ```
+    Direction: **left** | Cyan to gray with transparency
+  </Tab>
+  <Tab title="Header Gradient">
+    ```css
+    header {
+        background: linear-gradient(90deg, #5eabf3, #c4f1ef);
+        padding: 20px;
+        color: rgb(36, 55, 73);
+        font-size: 1.5em;
+    }
+    ```
+    Direction: **90deg** | Blue gradient
+  </Tab>
+  <Tab title="Section Gradient">
+    ```css
+    .section {
+        background: linear-gradient(to right, #02b5d4, #dad8d7);
+    }
+    ```
+    Direction: **right** | Teal to light gray
+  </Tab>
+  <Tab title="WhatsApp Box">
+    ```css
+    .whatsapp-box {
+        background: linear-gradient(to right, #0a0a0a, #52dff5);
+    }
+    ```
+    Direction: **right** | Black to cyan
+  </Tab>
+</Tabs>
+
+### RGBA Color Values
+
+Transparency effects using RGBA notation:
+
+```css
+/* Background with transparency */
+background-color: rgba(185, 234, 253, 0.7);
+
+/* Gradient with alpha channel */
+background-image: linear-gradient(to right, rgba(44, 54, 58, 0.7), rgba(185, 116, 253, 0.7));
+
+/* Box shadow with transparency */
+box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+```
+
+<Note>
+RGBA values allow colors with an alpha channel (transparency). The fourth parameter ranges from 0 (fully transparent) to 1 (fully opaque).
+</Note>
+
+### RGB Color Values
+
+Solid colors using RGB notation:
+
+```css
+h1 {
+    color: rgb(20, 16, 24);        /* Dark purple/black */
+}
+
+header {
+    color: rgb(36, 55, 73);        /* Dark blue-gray */
+}
+
+nav ul li a {
+    color: rgb(51, 82, 117);       /* Medium blue */
+}
+```
+
+## Box Model Implementation
+
+### Standard Box Model
+
+The portfolio demonstrates all aspects of the CSS box model:
+
+```css
+.box {
+    width: 300px;              /* Content width */
+    padding: 20px;             /* Inner spacing */
+    margin: 30px auto;         /* Outer spacing + horizontal centering */
+    border: 4px solid #fbfdfb; /* Border width, style, and color */
+    border-radius: 10px;       /* Rounded corners */
+}
+```
+
+**Box Model Breakdown:**
+- **Content**: 300px wide
+- **Padding**: 20px on all sides
+- **Border**: 4px solid border
+- **Margin**: 30px top/bottom, auto left/right (centers element)
+
+### Box Shadow
+
+3D depth effect using box-shadow:
+
+```css
+.box {
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+}
+```
+
+**Parameters:**
+1. **5px** - Horizontal offset (right)
+2. **5px** - Vertical offset (down)
+3. **15px** - Blur radius
+4. **rgba(0, 0, 0, 0.2)** - Shadow color with 20% opacity
+
+### Overflow Control
+
+```css
+.box {
+    overflow: hidden;
+}
+```
+
+Prevents content from spilling outside the border-radius boundary.
+
+## Layout Systems
+
+### Flexbox Implementation
+
+The portfolio uses Flexbox for flexible, one-dimensional layouts:
+
+#### Social Media Icons
+
+```css
+.box {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    align-items: center;
+}
+```
+
+**Flexbox Properties:**
+- `display: flex` - Activates flexbox layout
+- `gap: 15px` - Spacing between flex items
+- `justify-content: center` - Horizontal centering
+- `align-items: center` - Vertical centering
+
+#### Flex Container with Multiple Items
+
+```css
+.flex-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 20px;
+}
+
+.flex-item {
+    width: 100px;
+    height: 100px;
+    background-color: #4CAF50;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5em;
+}
+```
+
+<Note>
+`justify-content: space-around` distributes items evenly with equal space around each item.
+</Note>
+
+#### WhatsApp Contact Box
+
+```css
+.whatsapp-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0px;
+    background: linear-gradient(to right, #0a0a0a, #52dff5);
+    padding: 10px 450px;
+    border-radius: 10px;
+}
+```
+
+### Grid Implementation
+
+CSS Grid for two-dimensional layouts:
+
+#### Two-Column Layout
+
+```css
+.contenedor {
+    display: grid;
+    grid-template-columns: 1fr 1fr;  /* Two equal columns */
+    gap: 10px;                        /* Space between columns */
+    max-width: 400px;
+    margin: auto;
+}
+
+.columna {
+    background: linear-gradient(to right, #f8f6f6, #1cc7f1);
+    padding: 10px;
+    border-radius: 8px;
+}
+```
+
+**Grid Properties:**
+- `grid-template-columns: 1fr 1fr` - Creates two equal-width columns using fractional units
+- `gap: 10px` - Gutter spacing between grid items
+
+#### Three-Row Layout
+
+```css
+.grid-container {
+    display: grid;
+    grid-template-rows: auto 1fr auto;  /* Header, expandable main, footer */
+    gap: 10px;
+    padding: 20px;
+}
+
+.grid-container header,
+.grid-container main,
+.grid-container footer {
+    padding: 20px;
+    background-color: #2E8B57;
+    color: white;
+}
+```
+
+<Note>
+The `1fr` unit in the middle row makes the main content area expand to fill available space.
+</Note>
+
+## Typography
+
+### Font Families
+
+Different font stacks across versions:
+
+<CodeGroup>
+```css Full Portfolio
+body {
+    font-family: Georgia, 'Times New Roman', Times, serif, sans-serif;
+}
+```
+
+```css Basic Version
+h1 {
+    font-family: 'Courier New', Courier, monospace;
+}
+```
+
+```css CSS Demo
+body {
+    font-family: Arial, sans-serif;
+}
+```
+</CodeGroup>
+
+### Font Sizing
+
+```css
+h1 {
+    font-size: 48px;    /* Large heading - Basic version */
+}
+
+h1 {
+    font-size: 40px;    /* Medium heading - Full portfolio */
+}
+
+header {
+    font-size: 1.5em;   /* Relative sizing */
+}
+
+.box a {
+    font-size: 30px;    /* Large icons */
+}
+```
+
+### Font Weight and Decoration
+
+```css
+nav ul li a {
+    font-weight: bold;
+    text-decoration: none;
+}
+```
+
+## Interactive Elements
+
+### Hover Effects
+
+Transforms and color changes on hover:
+
+```css
+.box a:hover {
+    color: #007bff;
+    transform: scale(1.2);
+}
+
+.box img:hover {
+    transform: scale(1.2);
+}
+
+.whatsapp-box:hover {
+    transform: scale(1.1);
+}
+```
+
+**Transform Effects:**
+- `scale(1.2)` - Enlarges element to 120% of original size
+- `scale(1.1)` - Enlarges to 110% for subtle effect
+
+### Transitions
+
+Smooth animations for interactive elements:
+
+```css
+.box a {
+    transition: color 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.box img {
+    transition: transform 0.3s ease-in-out;
+}
+
+.whatsapp-box {
+    transition: transform 0.3s ease-in-out;
+}
+```
+
+**Transition Properties:**
+- **Duration**: 0.3s (300 milliseconds)
+- **Timing Function**: `ease-in-out` (slow start, slow end)
+- **Properties**: `color` and `transform`
+
+## Image Styling
+
+### Responsive Images
+
+```css
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    border-radius: 5px;
+}
+```
+
+**Key Techniques:**
+- `max-width: 100%` - Never exceed container width
+- `height: auto` - Maintain aspect ratio
+- `display: block` - Remove inline spacing
+- `margin: 0 auto` - Center horizontally
+
+### Profile Image
+
+```css
+.profile-img {
+    width: 250px;
+    height: auto;
+}
+```
+
+### Icon Images
+
+```css
+.whatsapp-box img {
+    width: 70px;
+    height: auto;
+}
+
+.box img {
+    width: auto;
+    height: 40px;
+}
+```
+
+## Navigation Styling
+
+### Horizontal Navigation
+
+```css
+nav ul {
+    list-style: none;  /* Remove bullet points */
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;   /* Horizontal layout */
+    margin: 0 15px;    /* Spacing between items */
+}
+
+nav ul li a {
+    color: rgb(51, 82, 117);
+    text-decoration: none;
+    font-weight: bold;
+}
+```
+
+**Result**: Clean horizontal navigation bar without bullets or underlines.
+
+## Component Styling Patterns
+
+### Gradient Box Component
+
+```css
+.gradient-box {
+    width: 100%;
+    padding: 20px;
+    background: linear-gradient(to right, #ff7e5f, #feb47b);
+    color: white;
+}
+```
+
+Warm orange-to-peach gradient for attention-grabbing sections.
+
+### WhatsApp Contact Component
+
+```css
+.whatsapp-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0px;
+    background: linear-gradient(to right, #0a0a0a, #52dff5);
+    padding: 10px 450px;
+    border-radius: 10px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.whatsapp-box img {
+    width: 70px;
+    height: auto;
+}
+
+.whatsapp-box a {
+    color: white;
+    font-size: 18px;
+    text-decoration: none;
+    font-weight: bold;
+}
+```
+
+<Warning>
+The `padding: 10px 450px` creates very wide horizontal padding that may not work well on smaller screens. Consider using more responsive values.
+</Warning>
+
+## Color Palette
+
+### Primary Colors
+
+The portfolio uses a cohesive blue-cyan color scheme:
+
+| Color | Hex/RGB | Usage |
+|-------|---------|-------|
+| Light Cyan | `rgba(5, 240, 248, 0.849)` | Body background gradient |
+| Sky Blue | `#5eabf3` | Header gradient start |
+| Pale Cyan | `#c4f1ef` | Header gradient end |
+| Teal | `#02b5d4` | Section backgrounds |
+| Cyan | `#52dff5` | WhatsApp box gradient |
+
+### Accent Colors
+
+| Color | Hex/RGB | Usage |
+|-------|---------|-------|
+| Green | `#4CAF50` | Demo flex items, borders |
+| Dark Green | `#2E8B57` | Grid container items |
+| Orange-Peach | `#ff7e5f → #feb47b` | Gradient box demo |
+| Blue | `#007bff` | Link hover state |
+
+## Text Alignment and Spacing
+
+### Centering Strategy
+
+```css
+body {
+    text-align: center;
+}
+
+#footer {
+    text-align: center;
+}
+```
+
+Global center alignment for single-column portfolio layout.
+
+### Padding and Margins
+
+```css
+body {
+    margin: 40px;
+    padding: 40px;
+}
+
+header {
+    padding: 20px;
+}
+
+main {
+    padding: 20px;
+}
+
+.box {
+    margin: 30px auto;  /* Vertical margin + horizontal centering */
+}
+```
+
+## Best Practices Implemented
+
+✅ **Embedded Styles** - All CSS in one place for easy maintenance  
+✅ **Modern Layouts** - Flexbox and Grid for flexible designs  
+✅ **Gradients** - Visual depth and modern aesthetic  
+✅ **Smooth Transitions** - Enhanced user experience  
+✅ **Responsive Images** - Proper scaling and aspect ratios  
+✅ **Color Consistency** - Cohesive blue-cyan palette  
+✅ **Box Model Mastery** - Proper spacing and sizing  
+
+## Areas for Improvement
+
+1. **Extract to external stylesheet** for better caching and reusability
+2. **Reduce excessive padding** on `.whatsapp-box` for better responsiveness
+3. **Use CSS custom properties** (variables) for color consistency
+4. **Add focus states** for keyboard navigation accessibility
+5. **Optimize specificity** - avoid overly specific selectors
+6. **Consider dark mode** using CSS custom properties and media queries
+
+---
+
+<Note>
+The CSS styling creates a visually appealing portfolio with modern techniques. See [Responsive Design](/technical/responsive-design) for how these styles adapt to different screen sizes.
+</Note>

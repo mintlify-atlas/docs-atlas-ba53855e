@@ -1,0 +1,384 @@
+---
+title: 'Social Media Section'
+description: 'Documentation for the social media section with Facebook, Instagram, LinkedIn integration and WhatsApp contact functionality'
+---
+
+## Overview
+
+The social media section provides multiple channels for connecting with Luisa Fernanda Zuleta across various platforms. The section features an elegant icon-based design with hover effects and a prominent WhatsApp contact integration.
+
+<Note>
+The social media section consists of two parts: the main social icons box at Actividad_Css.html:212-227 and the WhatsApp contact box at lines 230-233
+</Note>
+
+## Section Components
+
+The social media implementation includes two distinct elements:
+
+1. **Social Media Icons Box** - Facebook, Instagram, and LinkedIn links with icon images
+2. **WhatsApp Contact Box** - Dedicated contact section with call-to-action
+
+## HTML Implementation
+
+### Social Media Icons Box
+
+```html
+<section id="box-model">
+    <h2>Redes Sociales</h2>
+    <div class="box">
+        <h2>Sígueme</h2>
+        <a href="https://www.facebook.com/profile.php?id=100009198955739&locale=es_LA" target="_blank">
+            <img src="img/facebook.png.png" alt="Facebook" width="30">
+        </a>
+        <a href="https://www.instagram.com/fer.colombia/?next=%2F" target="_blank">
+            <img src="img/instagram.png.png" alt="Instagram" width="30">
+        </a>
+        <a href="https://www.linkedin.com/in/luisa-fernanda-zuleta-hurtado-4148b22b5/" target="_blank">
+            <img src="img/linkedin.png.png" alt="Linkedin" width="30">
+        </a>
+    </div>
+</section>
+```
+
+### WhatsApp Contact Box
+
+```html
+<div class="whatsapp-box">
+    <img src="img/whatsapp.png" alt="WhatsApp">
+    <a href="https://w.app/virtualmind" target="_blank">Contáctame</a>
+</div>
+```
+
+## Social Media Platforms
+
+<CardGroup cols={3}>
+<Card title="Facebook" icon="facebook" href="https://www.facebook.com/profile.php?id=100009198955739&locale=es_LA">
+Personal Facebook profile link
+
+**Profile ID:** 100009198955739
+
+**Locale:** Spanish (Latin America)
+
+**Target:** Opens in new tab
+</Card>
+
+<Card title="Instagram" icon="instagram" href="https://www.instagram.com/fer.colombia/">
+Instagram profile
+
+**Username:** @fer.colombia
+
+**Target:** Opens in new tab
+
+**Display:** 30px icon
+</Card>
+
+<Card title="LinkedIn" icon="linkedin" href="https://www.linkedin.com/in/luisa-fernanda-zuleta-hurtado-4148b22b5/">
+Professional LinkedIn profile
+
+**Profile:** luisa-fernanda-zuleta-hurtado-4148b22b5
+
+**Target:** Opens in new tab
+
+**Purpose:** Professional networking
+</Card>
+</CardGroup>
+
+## WhatsApp Integration
+
+<Card title="WhatsApp Contact" icon="whatsapp" href="https://w.app/virtualmind">
+**Link:** w.app/virtualmind
+
+**Text:** "Contáctame" (Contact me)
+
+**Purpose:** Direct messaging through WhatsApp
+
+**Opens:** In new tab with WhatsApp web or mobile app
+</Card>
+
+The WhatsApp integration uses the shortened w.app URL format pointing to "virtualmind" username or link identifier.
+
+## Styling
+
+### Social Media Box (.box)
+
+```css
+.box {
+    width: 300px;
+    padding: 20px;
+    margin: 30px auto;
+    border: 4px solid #fbfdfb;
+    border-radius: 10px;
+    background-color: #c5eaf8;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+    display: flex;  /* Activa Flexbox */
+    gap: 15px;  /* Espacio entre íconos */
+    justify-content: center; /* Alinea los íconos en el centro */
+    align-items: center; /* Centra los íconos verticalmente */
+}
+```
+
+<Accordion title="Box Styling Breakdown">
+- **width: 300px** - Fixed width for consistent sizing
+- **padding: 20px** - Internal spacing
+- **margin: 30px auto** - Centered with vertical spacing
+- **border: 4px solid #fbfdfb** - Light border for definition
+- **border-radius: 10px** - Rounded corners
+- **background-color: #c5eaf8** - Light blue background
+- **box-shadow** - Subtle shadow for depth
+- **display: flex** - Flexbox for icon alignment
+- **gap: 15px** - Spacing between icons
+- **justify-content: center** - Horizontal centering
+- **align-items: center** - Vertical centering
+</Accordion>
+
+### Link Hover Effects
+
+```css
+.box a {
+    font-size: 30px;
+    color: #333; /* Color de los íconos */
+    text-decoration: none;
+    transition: color 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.box a:hover {
+    color: #007bff; /* Cambia de color al pasar el mouse */
+    transform: scale(1.2); /* Hace un efecto de agrandamiento */
+}
+```
+
+<Note>
+Hover effects include color change to blue (#007bff) and 20% scale increase, providing visual feedback for interaction.
+</Note>
+
+### Icon Image Styling
+
+```css
+.box img {
+    width: auto; 
+    height: 40px; 
+    transition: transform 0.3s ease-in-out;
+}
+
+.box img:hover {
+    transform: scale(1.2); 
+}
+```
+
+### WhatsApp Box Styling
+
+```css
+.whatsapp-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0px;
+    background: linear-gradient(to right, #0a0a0a, #52dff5);
+    padding: 10px 450px;
+    border-radius: 10px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.whatsapp-box img {
+    width: 70px; /* Tamaño del icono */
+    height: auto;
+}
+
+.whatsapp-box a {
+    color: white;
+    font-size: 18px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.whatsapp-box:hover {
+    transform: scale(1.1); /* Efecto de agrandamiento */
+}
+```
+
+<CardGroup cols={2}>
+<Card title="WhatsApp Visual Design" icon="eye">
+- Black to cyan gradient background
+- Large 70px WhatsApp icon
+- White bold text for "Contáctame"
+- Horizontal flex layout
+- Wide padding (450px horizontal)
+</Card>
+
+<Card title="WhatsApp Interaction" icon="hand-pointer">
+- Hover effect scales entire box by 10%
+- Smooth 0.3s transition
+- Prominent call-to-action design
+- Opens in new tab
+</Card>
+</CardGroup>
+
+## Visual Hierarchy
+
+The social media section uses visual hierarchy to prioritize elements:
+
+1. **"Redes Sociales" Heading** - Section identifier (h2)
+2. **"Sígueme" Subheading** - Call to action within box (h2)
+3. **Icon Row** - Equal-sized icons in flexbox
+4. **WhatsApp Section** - Separate, prominent contact method
+
+## Design Features
+
+### Flexbox Layout
+
+The `.box` uses Flexbox for optimal icon alignment:
+
+- Icons centered horizontally and vertically
+- Equal spacing between icons (15px gap)
+- Responsive to content changes
+- Clean, modern appearance
+
+### Interactive Elements
+
+All social media elements include interactive features:
+
+<CardGroup cols={2}>
+<Card title="Link Hover States" icon="cursor-pointer">
+- Color changes on hover
+- Scale transformation (1.2x)
+- Smooth transitions (0.3s ease-in-out)
+- Visual feedback confirms clickability
+</Card>
+
+<Card title="Target Blank" icon="arrow-up-right-from-square">
+All links use `target="_blank"` to:
+- Open in new tabs
+- Preserve portfolio page
+- Allow easy return to site
+- Better user experience
+</Card>
+</CardGroup>
+
+## Accessibility Considerations
+
+### Alt Text
+
+Each image includes descriptive alt text:
+- `alt="Facebook"`
+- `alt="Instagram"`
+- `alt="Linkedin"`
+- `alt="WhatsApp"`
+
+<Note>
+Alt text ensures screen readers can identify social media platforms for visually impaired users.
+</Note>
+
+### Icon Sizing
+
+Icons use consistent sizing:
+- Social media icons: 30px width, auto height
+- WhatsApp icon: 70px width (larger for emphasis)
+
+## Best Practices
+
+<CardGroup cols={2}>
+<Card title="Separate Contact Method" icon="phone">
+WhatsApp is separated from other social media, emphasizing it as the primary direct contact method. This design choice prioritizes immediate communication.
+</Card>
+
+<Card title="Visual Consistency" icon="palette">
+All social platform icons maintain consistent sizing (30px) and styling, creating a cohesive visual experience. The WhatsApp section's larger icon differentiates it as a call-to-action.
+</Card>
+</CardGroup>
+
+## Platform Strategy
+
+The selection of social media platforms serves distinct purposes:
+
+<Accordion title="Facebook">
+**Purpose:** Personal connections and community
+
+**Use Case:** Sharing personal updates, connecting with friends and local community
+
+**Content Type:** Mixed personal and professional content
+</Accordion>
+
+<Accordion title="Instagram">
+**Purpose:** Visual portfolio and lifestyle
+
+**Username:** @fer.colombia highlights Colombian identity
+
+**Content Type:** Photos, design work, lifestyle content
+</Accordion>
+
+<Accordion title="LinkedIn">
+**Purpose:** Professional networking and career
+
+**Profile:** Full name profile for professional credibility
+
+**Content Type:** Professional achievements, work experience, skills
+</Accordion>
+
+<Accordion title="WhatsApp">
+**Purpose:** Direct communication and business inquiries
+
+**Link:** Custom w.app/virtualmind link for easy access
+
+**Content Type:** One-on-one conversations, project inquiries
+</Accordion>
+
+## Enhancement Opportunities
+
+<Card title="Potential Improvements" icon="lightbulb">
+1. **Add platform-specific colors**: Use brand colors (blue for Facebook, pink/orange for Instagram, blue for LinkedIn)
+2. **Include follower counts**: Display social proof with follower numbers
+3. **Add Threads or X/Twitter**: Expand platform presence
+4. **Implement social feeds**: Embed recent posts from each platform
+5. **Add QR codes**: Include QR code for WhatsApp for mobile scanning
+6. **Icon libraries**: Replace PNG images with icon fonts (Font Awesome, etc.)
+7. **Share buttons**: Add "Share this portfolio" functionality
+</Card>
+
+## Alternative Icon Implementation
+
+### Using Font Awesome
+
+```html
+<div class="box">
+    <h2>Sígueme</h2>
+    <a href="[facebook-url]" target="_blank">
+        <i class="fab fa-facebook"></i>
+    </a>
+    <a href="[instagram-url]" target="_blank">
+        <i class="fab fa-instagram"></i>
+    </a>
+    <a href="[linkedin-url]" target="_blank">
+        <i class="fab fa-linkedin"></i>
+    </a>
+</div>
+```
+
+Benefits of icon fonts:
+- Scalable without quality loss
+- Lighter weight than images
+- Easy color customization
+- Consistent rendering across browsers
+
+## Integration with Navigation
+
+The section is accessible through the navigation menu at Actividad_Css.html:155:
+
+```html
+<li><a href="#redes-sociales">Redes Sociales</a></li>
+```
+
+<Note>
+Note: The HTML uses `id="box-model"` for the section, but navigation links to `#redes-sociales`, which may cause navigation issues. Consider updating the section ID to match.
+</Note>
+
+## Related Sections
+
+- **Professional Profile**: Social media provides platforms to showcase professional work
+- **Projects**: Links may contain portfolios of project work
+- **Hobbies**: Social media may feature personal interests and hobbies
+
+## File Location
+
+Source: 
+- Social Media Box: `~/workspace/source/Actividad_Css.html:212-227`
+- WhatsApp Box: `~/workspace/source/Actividad_Css.html:230-233`
